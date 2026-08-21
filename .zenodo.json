@@ -1,0 +1,36 @@
+{
+  "title": "Analysis code: Changing Epidemiology of Enterohemorrhagic Escherichia coli Infections in South Korea, 2001-2024 - Age-Standardized Bayesian Spatiotemporal Analysis",
+  "upload_type": "software",
+  "license": "MIT",
+  "creators": [
+    {
+      "name": "Kim, Seongdae",
+      "affiliation": "Hongik University",
+      "orcid": "0000-0002-1525-0091"
+    },
+    {
+      "name": "Chun, Byung Chul",
+      "affiliation": "Korea University College of Medicine",
+      "orcid": "0000-0001-6576-8916"
+    }
+  ],
+  "keywords": [
+    "enterohemorrhagic Escherichia coli",
+    "STEC",
+    "spatiotemporal analysis",
+    "Bayesian",
+    "BYM2",
+    "R-INLA",
+    "wavelet analysis",
+    "age standardization",
+    "foodborne disease",
+    "South Korea",
+    "specification curve",
+    "multiverse analysis",
+    "preregistration",
+    "data quality",
+    "reproducibility"
+  ],
+  "description": "Reproducible R and Python analysis code for the manuscript 'Changing Epidemiology of Enterohemorrhagic Escherichia coli Infections in South Korea, 2001-2024: Age-Standardized Bayesian Spatiotemporal Analysis' (submitted to JMIR Public Health and Surveillance). Includes age-standardized negative binomial BYM2 spatiotemporal models (R-INLA), emerging hot spot analysis, Morlet wavelet and count-matched null-model seasonality analyses, demographic decomposition, pre- versus post-COVID-19 period analyses, and figure-generation scripts. Version 1.1 adds the covariate-recovery pipeline, a preregistered multiverse of 400 model specifications with decision rules fixed in advance, detection-adjusted reestimation, a health-behavior covariate domain, and sequential-adjustment checks for the handwashing association. It also documents a data-quality incident in which unmeasured covariate years had been ingested as zeros, together with the gates introduced to prevent recurrence.",
+  "version": "1.1.0"
+}
