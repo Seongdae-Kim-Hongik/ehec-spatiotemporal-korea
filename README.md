@@ -12,6 +12,9 @@ Reproducible analysis code for:
 > documented in [`DATA_QUALITY_INCIDENT.md`](DATA_QUALITY_INCIDENT.md); the analysis plan fixed before estimates were
 > inspected is in [`PREREGISTRATION.md`](PREREGISTRATION.md).
 
+
+> **Note on version 2.0 (August 2026).** The covariate stage was rebuilt from a full census of every district-level indicator available in the source files (4,305 columns), with 108 indicators prespecified in 7 transmission-pathway domains and 85 entering a 3,000-specification multiverse (scripts 520-534). The final 20-covariate model, period analyses, and figures were re-estimated (540-544). The beef-cattle and dairy exposure was re-sourced from the quinquennial Census of Agriculture, Forestry and Fisheries (2010/2015/2020 district farm counts; scripts 545-548) so that measured values precede the study window; the quarterly livestock monitoring series is retained as an independent-source sensitivity analysis. The per-indicator adjudication file is included as `COVARIATE_PREREG_POOL.csv`.
+
 ## Data
 
 The analyses use aggregated official statistics only (no individual-level or identifiable data):
@@ -74,9 +77,16 @@ Both default to the current directory (`.` and `./data`) if unset. Required R pa
 - `513_soap_forensics.py`, `514_soap_signflip.R` — sequential-adjustment and confounding checks for the handwashing-with-soap association (eTable 29).
 
 
+### Step 5 — Full covariate census, preregistered pool, and final model (version 2.0)
+- `520_covariate_triage.py`, `521_covariate_manual_adjudication.py` — census of all 4,305 district-level columns; rule-based triage plus per-indicator manual adjudication against the transmission framework (output: `COVARIATE_PREREG_POOL.csv`).
+- `530_build_prereg_panel.py` — assembles the 108-indicator district-year panel with the data-quality gate (per-year zero-share audit, denominator integrity, renormalization prohibition); `531_z6_vif_design.py` — survey-indicator PC diagnosis and within-domain VIF pruning (85 modeled).
+- `532_prereg_stage1_domain.R`, `533_prereg_multiverse.R`, `534_prereg_mv_summary.py` — 3,000-specification stratified multiverse (12 parallel workers) and its summary (Tables S13-S15).
+- `540_final_main_model.R` — final 20-covariate BYM2+RW1+type I model (Table 2, Table S11, maps); `542_final_period_analyses.R` — 4-year windows, COVID-19 split, and period-interaction tests (Tables S8-S9, S17); `543_final_spec_curve.py`, `544_det_windows_final.py` — Figures S16-S17.
+- `545_census_livestock.py` — parses the 2010/2015/2020 agricultural-census district livestock files, maps them to the 229-district frame (with administrative-boundary aliases), and interpolates 2011-2024; a national-total assertion guards against double counting. `548_patch_panel_census.py` — swaps the panel's ruminant farm densities to the census series (monitoring-series values preserved as `*_trend2019`). `546_census_beef_model.R` — exposure-source sensitivity (census time-varying / time-invariant / year-wise standardized vs monitoring series; Table S16).
+
 ## Environment
 
-R 4.3 (INLA 24.x, spdep, sf, dplyr, ggplot2, patchwork), Python 3.11 (pandas, numpy, scipy, matplotlib, python-docx, PyWavelets). INLA's Laplace approximations are deterministic, but newer INLA/BLAS builds may shift DIC/WAIC by a few points without changing any IRR, credible set, or classification.
+R 4.3 (INLA 24.x, spdep, sf, dplyr, ggplot2, patchwork, e1071, car), Python 3.11 (pandas, numpy, scipy, matplotlib, python-docx, PyWavelets, Pillow). INLA's Laplace approximations are deterministic, but newer INLA/BLAS builds may shift DIC/WAIC by a few points without changing any IRR, credible set, or classification.
 
 ## Notes
 

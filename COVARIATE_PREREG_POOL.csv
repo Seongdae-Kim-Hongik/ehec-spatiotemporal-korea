@@ -1,0 +1,2016 @@
+﻿file,col,n_years,coverage,status,domain,label,direction,normalization,rationale,tier
+merged_분뇨찌꺼기처리.csv,연도,14,0.689,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_세부용도별지하수.csv,총계_시설수,13,0.608,EXCLUDE,,,,,facility count: volume series retained instead,A
+merged_세부용도별지하수.csv,총계_이용량,13,0.562,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+merged_세부용도별지하수.csv,온천수_시설수,13,0.134,EXCLUDE,,,,,facility count: volume series retained instead,A
+merged_세부용도별지하수.csv,온천수_이용량,13,0.126,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+merged_지하수수질.csv,합계,12,0.891,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_지하수수질.csv,적합,13,0.967,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_지하수수질.csv,부적합,13,0.433,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_지하수수질.csv,적합률(%),13,0.967,INCLUDE,D3 water-sanit,Groundwater quality pass rate,-,%,inverse of contamination; replaces 부적합 count,A
+merged_하수관로개보수.csv,연도,13,0.962,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_하수관로개보수.csv,개·보수관로_전체보수(m)_합류식,12,0.43,INCLUDE,D3 water-sanit,Combined-sewer repair length,±,m per km2,combined sewers overflow in summer rain,A
+merged_하수관로개보수.csv,개·보수관로_전체보수(m)_분류식_우수,12,0.434,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수관로개보수.csv,개·보수관로_전체보수(m)_분류식_오수,12,0.584,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수관로개보수.csv,받이_오수받이(개소),12,0.535,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수관로개보수.csv,"토실,토구_토실(개소)",12,0.098,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수관로개보수.csv,수밀검사·CCTV조사량(m),12,0.67,INCLUDE,D3 water-sanit,Sewer inspection length,-,m per km2,maintenance intensity; leakage control,A
+merged_하수도보급률.csv,연도,13,0.99,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_하수도보급률.csv,공공하수처리구역인구보급률(%),13,0.989,INCLUDE,D3 water-sanit,Public sewage-treatment coverage,-,%,treated sewage; duplicate-check vs 하수도보급률,A
+merged_하수도보급률.csv,고도처리인구보급률(%),13,0.948,INCLUDE,D3 water-sanit,Advanced wastewater treatment coverage,-,%,nutrient/pathogen removal,A
+merged_하수도보급률.csv,하수도설치율(%),13,0.988,INCLUDE,D3 water-sanit,Sewer installation rate,-,%,infrastructure; check collinearity with coverage,A
+merged_하수도보급률.csv,총인구(명),13,0.99,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_하수도보급률.csv,총면적(㎢),13,0.987,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+merged_하수도보급률.csv,하수처리구역내_계,13,0.989,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수도보급률.csv,하수처리구역외_계,13,0.788,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수도보급률.csv,하수처리구역외_미처리인구,12,0.15,INCLUDE,D3 water-sanit,Untreated-sewage population,+,% of district pop,direct environmental release (low coverage 0.15; sensitivity only),A
+merged_하수도보급률.csv,하수처리구역외_오수처리인구,12,0.52,EXCLUDE,,,,,sewer sub-component: canonical measures retained,A
+merged_하수도보급률.csv,하수처리구역외_정화조인구,12,0.533,INCLUDE,D3 water-sanit,Septic-tank population,+,% of district pop,on-site sanitation; groundwater contamination,A
+경제수준.csv,경제활동참가율,13,0.058,EXCLUDE,,,,,coverage < 0.10: unusable,A
+경제수준.csv,실업률,13,0.366,INCLUDE,D5 SES,Unemployment rate,+,%,deprivation (coverage 0.37; sensitivity),A
+경제수준.csv,고용률,13,0.37,INCLUDE,D5 SES,Employment rate,-,%,economic level (coverage 0.37; sensitivity),A
+경제수준.csv,청년고용률,13,0.058,EXCLUDE,,,,,coverage < 0.10: unusable,A
+경제수준.csv,국민기초생활보장수급자,13,0.02,EXCLUDE,,,,,coverage < 0.10: unusable,A
+교육기관_인력_예산.csv,교원1인당학생수,13,0.811,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,유치원교원수,13,0.744,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,초등학교교원수,13,0.516,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,유치원원아수,13,0.316,EXCLUDE,D4 hygiene-food,Kindergarten enrolment,+,% of pop 3-5,duplicate of 'Kindergarten enrolment' from another file; higher-coverage source retained,A
+교육기관_인력_예산.csv,초등학교 학생 수,13,0.048,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,유치원 수,13,0.803,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,유아천명당보육시설수,13,0.805,EXCLUDE,D4 hygiene-food,Childcare facilities per 1000 infants,+,per 1000 infants,duplicate of 'Childcare facilities per 1000 infants' from another file; higher-coverage source retained,A
+교육기관_인력_예산.csv,초등학교 수,13,0.799,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,전문대학 및 대학교 수,13,0.502,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+교육기관_인력_예산.csv,인구천명당 사설학원수,13,0.807,EXCLUDE,,,,,duplicate series of a retained variable (사설학원수/요양기관수_전체/초등학교수/재정자립도 구판),A
+국민건강결과_최종.csv,의사수,13,1.0,INCLUDE,D7 detection,Physicians (count),±,per 100k pop,alternate to per-1000 series; pick one,A
+국민건강결과_최종.csv,치과의사수,13,1.0,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,한의사수,13,1.0,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,약사수,13,1.0,INCLUDE,D7 detection,Pharmacists,±,per 100k pop,OTC self-treatment → under-ascertainment,A
+국민건강결과_최종.csv,물리치료사수,13,1.0,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,작업치료사수,13,0.688,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,사회복지사수,12,0.832,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,인구천명당의료기관종사의사수,13,1.0,INCLUDE,D7 detection,Physicians per 1000 pop,±,as-is (per 1000 in source),ascertainment proxy,A
+국민건강결과_최종.csv,총인구수,13,1.0,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+국민건강결과_최종.csv,남자인구수,13,1.0,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+국민건강결과_최종.csv,여자인구수,13,1.0,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+국민건강결과_최종.csv,노인인구수,13,1.0,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+국민건강결과_최종.csv,구강보건_스케일링또는치면세정술수혜자수,11,0.416,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,구강보건_불소용액양치사업수혜자수,11,0.712,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,구강보건_불소도포수혜자수,11,0.719,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,간호사수,12,0.923,INCLUDE,D7 detection,Nurses,±,per 100k pop,health workforce,A
+국민건강결과_최종.csv,고혈압진단경험률_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,고혈압진단경험률_30세이상_표준화율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,당뇨병진단경험률_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,당뇨병진단경험률_30세이상_표준화율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,비만율_자가보고_표준화율,12,0.919,INCLUDE,D6 behaviour,Obesity (self-reported),±,% (age-std),diet pattern proxy,A
+국민건강결과_최종.csv,스트레스인지율_표준화율,13,1.0,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,우울감경험률_표준화율,13,1.0,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,주관적구강건강이나쁜인구의분율_표준화율,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,연간사고및중독경험률_표준화율,12,0.923,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,연간사고및중독건수율_표준화율,12,0.922,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,주관적비만인지율_표준화율,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,체중조절시도율_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,평생음주율_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,월간음주율_표준화율,13,1.0,INCLUDE,D6 behaviour,Monthly drinking,+,% (age-std),eating-out / social dining exposure,A
+국민건강결과_최종.csv,고혈압관리교육이수율_표준화율,11,0.845,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,중등도이상신체활동실천율_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,걷기실천율_표준화율,13,1.0,INCLUDE,D6 behaviour,Walking practice,0,% (age-std),negative control: general behaviour,A
+국민건강결과_최종.csv,건강생활실천율_표준화율,13,1.0,INCLUDE,D6 behaviour,Healthy-lifestyle practice,-,% (age-std),composite preventive behaviour,A
+국민건강결과_최종.csv,운전행태_횡단보도정지선준수율,12,0.909,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,보행행태_횡단보도신호준수율,12,0.908,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,운전행태_이륜차승차자안전모착용률,12,0.917,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,운전자석안전벨트착용률_표준화율,12,0.923,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,현재비흡연자의가정실내간접흡연노출률_표준화율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,현재흡연율_표준화율,13,1.0,INCLUDE,D6 behaviour,Current smoking,+,% (age-std),inverse health-behaviour indicator,A
+국민건강결과_최종.csv,남자현재흡연율_표준화율,13,1.0,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,여자현재흡연율_조율,12,0.922,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,여자현재흡연율_표준화,11,0.844,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,흡연시작연령,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,현재흡연자의금연시도율_표준화율,13,1.0,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,연간인플루엔자예방접종률_표준화율,12,0.923,INCLUDE,D6 behaviour,Influenza vaccination coverage,-,% (age-std),preventive-behaviour vs detection (bidirectional test),A
+국민건강결과_최종.csv,내과전문의,13,0.997,INCLUDE,D7 detection,Internal-medicine specialists,±,per 100k pop,GI presentation pathway,A
+국민건강결과_최종.csv,신경과전문의,13,0.8,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,정신건강의학과전문의,13,0.863,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,외과전문의,13,0.99,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,정형외과전문의,13,0.97,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,신경외과전문의,13,0.864,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,흉부외과전문의,13,0.783,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,성형외과전문의,13,0.756,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,마취통증의학과전문의,13,0.95,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,산부인과전문의,13,0.951,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,안과전문의,13,0.957,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,이비인후과전문의,13,0.886,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,피부과전문의,13,0.726,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,비뇨기과전문의,12,0.81,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,영상의학과전문의,13,0.874,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,방사선종양학과전문의,13,0.343,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,병리과전문의,13,0.485,INCLUDE,D7 detection,Pathology specialists,±,per 100k pop,lab capacity,A
+국민건강결과_최종.csv,진단검사의학과전문의,13,0.646,INCLUDE,D7 detection,Laboratory-medicine specialists,±,per 100k pop,culture/toxin testing capacity; most direct EHEC ascertainment proxy,A
+국민건강결과_최종.csv,결핵과전문의,13,0.217,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,재활의학과전문의,13,0.816,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,핵의학과전문의,13,0.346,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,가정의학과전문의,13,0.968,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,응급의학과전문의,13,0.744,INCLUDE,D7 detection,Emergency-medicine specialists,±,per 100k pop,acute presentation,A
+국민건강결과_최종.csv,직업환경의학과전문의,13,0.508,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,예방의학과전문의,13,0.355,INCLUDE,D7 detection,Preventive-medicine specialists,±,per 100k pop,surveillance capacity,A
+국민건강결과_최종.csv,요양기관수_전체,13,1.0,EXCLUDE,,,,,duplicate series of a retained variable (사설학원수/요양기관수_전체/초등학교수/재정자립도 구판),A
+국민건강결과_최종.csv,요양기관수_상급종합병원,13,0.16,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,요양기관수_종합병원,13,0.62,INCLUDE,D7 detection,General hospitals,±,per 100k pop,tertiary access; HUS referral,A
+국민건강결과_최종.csv,요양기관수_병원,13,0.915,INCLUDE,D7 detection,Hospitals,±,per 100k pop,secondary access,A
+국민건강결과_최종.csv,요양기관수_요양병원,13,0.892,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,요양기관수_의원,13,0.995,INCLUDE,D7 detection,Clinics,±,per 100k pop,primary-care access,A
+국민건강결과_최종.csv,요양기관수_치과병원,13,0.408,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,요양기관수_치과의원,13,0.999,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,요양기관수_조산원,13,0.1,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,요양기관수_한방병원,13,0.421,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,요양기관수_한의원,13,1.0,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,요양기관수_보건의료원,13,0.069,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,요양기관수_보건소,13,0.928,INCLUDE,D7 detection,Public health centers,±,per 100k pop,public surveillance node,A
+국민건강결과_최종.csv,요양기관수_보건지소,13,0.733,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,요양기관수_보건진료소,13,0.667,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,요양기관수_약국,13,1.0,INCLUDE,D7 detection,Pharmacies,±,per 100k pop,self-medication access,A
+국민건강결과_최종.csv,의원_합계,13,0.995,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,의원_내과,13,0.955,INCLUDE,D7 detection,Internal-medicine clinics,±,per 100k pop,GI primary care,A
+국민건강결과_최종.csv,의원_신경과,13,0.408,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_정신건강의학과,13,0.67,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,의원_외과,13,0.858,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,의원_정형외과,13,0.88,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_신경외과,13,0.651,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_흉부외과,10,0.127,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_성형외과,13,0.463,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_산부인과,13,0.746,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,의원_안과,13,0.91,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_이비인후과,13,0.815,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_피부과,13,0.643,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_비뇨기과,12,0.694,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_영상의학과,13,0.38,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_병리과,13,0.063,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,의원_진단검사의학과,13,0.043,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,의원_결핵과,13,0.013,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_재활의학과,13,0.532,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,의원_핵의학과,13,0.004,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_가정의학과,13,0.731,EXCLUDE,,,,,specialty with no EHEC diagnostic role,A
+국민건강결과_최종.csv,의원_전문과목미표시전문의,13,0.981,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,의원_일반의,13,0.986,EXCLUDE,,,,,facility sub-type without EHEC role,A
+국민건강결과_최종.csv,인구천명당의료기관병상수,11,0.839,INCLUDE,D7 detection,Hospital beds per 1000 pop,±,as-is (per 1000 in source),ascertainment,A
+국민건강결과_최종.csv,일반회계중보건세출비중,13,0.996,INCLUDE,D5 SES,Health share of general budget,-,%,public-health spending intensity,A
+국민건강결과_최종.csv,의료기관진료실인원_전체,11,0.846,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,의료기관진료비_전체,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,의료기관진료실인원_입원,11,0.835,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,의료기관진료비_입원,12,0.911,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,의료기관진료실인원_외래,11,0.846,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,의료기관진료비_외래,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,고혈압_진료실인원,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,고혈압_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,당뇨병_진료실인원,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,당뇨병_진료비,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,치주질환_진료실인원,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,치주질환_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,관절염_진료실인원,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,관절염_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,정신질환_진료실인원,10,0.769,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,정신질환_진료비,12,0.876,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,전염병_진료실인원,12,0.923,INCLUDE,D7 detection,Infectious-disease outpatients,±,per 1000 pop,health-seeking for infection (leakage check: exclude if EHEC-inclusive),A
+국민건강결과_최종.csv,전염병_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간질환_진료실인원,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,간질환_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암_진료실인원,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간암_진료실인원,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간암_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,폐암_진료실인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,폐암_진료비,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,대장암_진료실인원,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,대장암_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암_진료실인원,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암_진료실인원,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암_진료비,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,고혈압진단경험자의치료율_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,고혈압진단경험자의치료율_30세이상_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,당뇨병진단경험자의치료율_30세이상_표준화율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,연간당뇨병안질환합병증검사수진율_30세이상_표준화율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,연간당뇨병신장질환합병증검사수진율_30세이상_조율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,모자보건등록관리_임산부수,11,0.772,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,모자보건등록관리_영유아수,11,0.766,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,방문건강관리_등록가구수,11,0.673,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,방문건강관리_방문건수,11,0.673,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,성비,13,1.0,INCLUDE,D5 SES,Sex ratio,±,males per 100 females,forced demographic control,A
+국민건강결과_최종.csv,고령인구비율,13,1.0,INCLUDE,D5 SES,Older-adult share,±,%,rural aging; excluded from main (offset absorbs age) but kept for urbanicity axis,A
+국민건강결과_최종.csv,도시지역인구비율,13,0.999,INCLUDE,D5 SES,Urban population share,±,% (as reported),urbanicity axis (context),A
+국민건강결과_최종.csv,인구증가율,13,0.995,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,합계출산율,13,0.972,INCLUDE,D5 SES,Total fertility rate,+,children per woman,young-child population (check vs offset),A
+국민건강결과_최종.csv,조혼인율,13,0.972,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,조이혼율,13,0.972,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,자연증가율,12,0.916,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,전체출생아수,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,조출생률,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,소멸위험지수,10,0.769,INCLUDE,D5 SES,Local extinction-risk index,+,index,rural decline composite,A
+국민건강결과_최종.csv,총전입,13,0.998,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,총전출,13,0.998,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,시도간전입,13,0.998,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,시도간전출,13,0.998,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,순이동인구,13,0.997,INCLUDE,D5 SES,Net migration,±,per 1000 pop,population turnover,A
+국민건강결과_최종.csv,인구밀도,10,0.769,INCLUDE,D5 SES,Population density,±,per km2,contact rate vs detection,A
+국민건강결과_최종.csv,주민등록세대수,13,0.999,INCLUDE,D5 SES,Households,±,persons per household (derive),household size from pop/households,A
+국민건강결과_최종.csv,일인당자동차등록대수,13,0.995,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,재정자주도,13,0.991,INCLUDE,D5 SES,Fiscal autonomy,-,%,alternate fiscal measure; pick one,A
+국민건강결과_최종.csv,재정자립도,13,0.99,INCLUDE,D5 SES,Fiscal independence,-,%,local fiscal capacity; sanitation investment,A
+국민건강결과_최종.csv,일반회계중사회복지예산비중,13,0.987,INCLUDE,D5 SES,Welfare share of general budget,±,%,deprivation response vs deprivation level,A
+국민건강결과_최종.csv,일반회계중일반공공행정예산비중,13,0.991,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,인구천명당사업체수,11,0.843,INCLUDE,D5 SES,Businesses per 1000 pop,-,as-is (per 1000 in source),economic activity,A
+국민건강결과_최종.csv,인구천명당종사자수,11,0.843,INCLUDE,D5 SES,Workers per 1000 pop,-,as-is (per 1000 in source),economic activity,A
+국민건강결과_최종.csv,지가변동률,10,0.769,INCLUDE,D5 SES,Land-price change,-,%,development pressure,A
+국민건강결과_최종.csv,교원1인당학생수,13,0.999,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,유치원교원수,13,0.999,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,초등학교교원수,13,0.994,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,유치원원아수,13,0.999,INCLUDE,D4 hygiene-food,Kindergarten enrolment,+,% of pop 3-5,congregate child settings,A
+국민건강결과_최종.csv,초등학교학생수,13,0.994,INCLUDE,D4 hygiene-food,Primary-school enrolment,+,% of pop 6-11,school meals; congregate exposure,A
+국민건강결과_최종.csv,유치원수,13,0.999,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,유아천명당보육시설수,13,0.993,INCLUDE,D4 hygiene-food,Childcare facilities per 1000 infants,+,as-is (per 1000 infants in source),daycare person-to-person transmission; pediatric EHEC,A
+국민건강결과_최종.csv,초등학교수,13,0.994,EXCLUDE,,,,,duplicate series of a retained variable (사설학원수/요양기관수_전체/초등학교수/재정자립도 구판),A
+국민건강결과_최종.csv,전문대학및대학교수,13,0.589,INCLUDE,D5 SES,Tertiary institutions,-,per 100k pop,education level proxy (supervisor hypothesis),A
+국민건강결과_최종.csv,인구천명당사설학원수,13,0.996,INCLUDE,D5 SES,Private academies per 1000 pop,-,as-is (per 1000 in source),education investment; urban affluence,A
+국민건강결과_최종.csv,노인천명당노인여가복지시설수,13,0.994,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,인구천명당외국인수,13,0.995,INCLUDE,D5 SES,Foreign residents per 1000 pop,±,as-is (per 1000 in source),dietary/hygiene heterogeneity; migrant labor in livestock,A
+국민건강결과_최종.csv,전체이혼건수,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,주민1인당생활폐기물배출량,11,0.818,INCLUDE,D5 SES,Household waste per capita,+,kg per person,consumption/sanitation load,A
+국민건강결과_최종.csv,행정구역면적,13,0.965,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+국민건강결과_최종.csv,인구천명당스포츠서비스업수,10,0.769,EXCLUDE,,,,,no plausible pathway,A
+국민건강결과_최종.csv,인구천명당주점업수,10,0.769,INCLUDE,D4 hygiene-food,Bars/pubs per 1000 pop,+,as-is (per 1000 pop in source),out-of-home eating; density form (not count),A
+국민건강결과_최종.csv,인구천명당패스트푸드점수,10,0.769,INCLUDE,D4 hygiene-food,Fast-food outlets per 1000 pop,+,as-is (per 1000 pop in source),ground-beef exposure; canonical EHEC food vehicle,A
+국민건강결과_최종.csv,상수도보급률,13,0.845,INCLUDE,D3 water-sanit,Piped water supply coverage,-,%,municipal treated water reduces groundwater reliance,A
+국민건강결과_최종.csv,하수도보급률,13,0.999,INCLUDE,D3 water-sanit,Sewerage coverage,-,%,sewered excreta removal,A
+국민건강결과_최종.csv,도로포장률,13,0.943,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_합계,13,1.0,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_일반도로,13,1.0,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_자동차전용도로,13,0.531,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_보행자전용도로,13,0.808,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_자전거전용도로,13,0.134,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_고가도로,13,0.061,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,도로면적_지하도로,12,0.115,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,보행자전용도로연장,11,0.683,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,영양표시독해율_표준화율,12,0.923,INCLUDE,D4 hygiene-food,Nutrition-label literacy,-,% (age-std),food-safety attentiveness,A
+국민건강결과_최종.csv,연간음주율_표준화율,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,당뇨병관리교육이수율_표준화율,11,0.845,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,스트레스로인한정신상담률_표준화율,10,0.769,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,우울증상으로인한정신상담률_표준화율,12,0.919,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,격렬한신체활동실천율_표준화율,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,중등도신체활동실천율_표준화율,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,운전행태_방향지시등점등률,12,0.912,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,운전행태_신호준수율,12,0.909,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국민건강결과_최종.csv,현재비흡연자의직장실내간접흡연노출률_표준화율,10,0.769,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,노인장기요양시설_사회복지사,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양_기관수,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양_정원,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양_시설_기관수,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양_시설_정원,12,0.922,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양_재가_기관수,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양_재가_정원,12,0.906,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,연간보건기관이용률_표준화율,10,0.769,INCLUDE,D6 behaviour,Public-health-center use,±,% (age-std),health-seeking; detection,A
+국민건강결과_최종.csv,구강보건_구강보건교육이수자수,11,0.769,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,현재흡연자의1개월내금연계획률_표준화율,11,0.839,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,노인장기요양시설_의사,12,0.895,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양시설_간호사,12,0.882,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양시설_간호조무사,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양시설_치과위생사,12,0.026,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,노인장기요양시설_요양보호사,12,0.923,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,정상A,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,일반질환의심,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유질환자,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,암검진_대상인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,암검진_수검인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암검진_대상인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암검진_수검인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,대장암검진_대상인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,대장암검진_수검인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간암검진_대상인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간암검진_수검인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암검진_대상인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암검진_수검인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암검진_대상인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암검진_수검인원,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암결과_이상소견없음,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암결과_양성질환,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암결과_위암의심,12,0.92,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암결과_위암,12,0.921,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암결과_기타,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,위암결과_기존암환자,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,분변잠혈반응검사_잠혈반응없음,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,분변잠혈반응검사_잠혈반응있음,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,대장이중조영촬영또는대장내시경검사_이상소견없음,11,0.845,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,대장이중조영촬영또는대장내시경검사_대장용종,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간암결과_기타,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,간암결과_기존암환자,11,0.667,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암결과_정상,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암결과_양성질환,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암결과_유방암의심,12,0.913,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암결과_판정유보,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,유방암결과_기존암환자,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암결과_이상소견없음,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암결과_기타,12,0.918,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암결과_기존암환자,12,0.828,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_전체,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_전체,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_6m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_6m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_12m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_12m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_24m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_24m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_36m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_36m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_48m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_48m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_대상인원_60m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진_수검인원_60m,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아건강검진율_전체,11,0.845,INCLUDE,D6 behaviour,Infant check-up rate,±,%,caregiver behaviour vs pediatric diagnosis opportunity,A
+국민건강결과_최종.csv,영유아건강검진율_6m,11,0.845,EXCLUDE,,,,,infant check-up sub-series: overall rate retained,A
+국민건강결과_최종.csv,영유아건강검진율_12m,11,0.845,EXCLUDE,,,,,infant check-up sub-series: overall rate retained,A
+국민건강결과_최종.csv,영유아건강검진율_24m,11,0.845,EXCLUDE,,,,,infant check-up sub-series: overall rate retained,A
+국민건강결과_최종.csv,영유아건강검진율_36m,11,0.845,EXCLUDE,,,,,infant check-up sub-series: overall rate retained,A
+국민건강결과_최종.csv,영유아건강검진율_48m,11,0.845,EXCLUDE,,,,,infant check-up sub-series: overall rate retained,A
+국민건강결과_최종.csv,영유아건강검진율_60m,11,0.845,EXCLUDE,,,,,infant check-up sub-series: overall rate retained,A
+국민건강결과_최종.csv,영유아검진판정_전체,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_주의,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_정밀검사필요,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_6m_전체,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_6m_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_6m_주의,12,0.915,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_6m_정밀검사필요,11,0.808,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_12m_전체,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_12m_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_12m_주의,12,0.919,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_12m_정밀검사필요,11,0.83,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_24m_전체,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_24m_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_24m_주의,12,0.919,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_24m_정밀검사필요,11,0.835,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_36m_전체,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_36m_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_36m_주의,12,0.922,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_36m_정밀검사필요,11,0.841,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_48m_전체,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_48m_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_48m_주의,12,0.92,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_48m_정밀검사필요,11,0.841,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_60m_전체,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_60m_양호,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_60m_주의,12,0.919,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_60m_정밀검사필요,11,0.842,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_전체_정밀검사필요비율,11,0.846,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_6m_정밀검사필요비율,11,0.809,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_12m_정밀검사필요비율,11,0.829,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_24m_정밀검사필요비율,11,0.835,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_36m_정밀검사필요비율,11,0.841,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_48m_정밀검사필요비율,11,0.839,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,영유아검진판정_60m_정밀검사필요비율,11,0.842,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,방문건강관리_보건소내·외서비스연계건수,10,0.56,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,혈압수치인지율_표준화율,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,혈당수치인지율_표준화율,11,0.846,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,학급당학생수_전체,10,0.769,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,학급당학생수_유치원,10,0.769,INCLUDE,D4 hygiene-food,Kindergarten class size,+,pupils per class,crowding in child settings,A
+국민건강결과_최종.csv,학급당학생수_초등학교,10,0.769,INCLUDE,D4 hygiene-food,Primary class size,+,pupils per class,crowding,A
+국민건강결과_최종.csv,학급당학생수_중학교,10,0.769,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,학급당학생수_고등학교,10,0.769,EXCLUDE,,,,,education sub-series: enrolment/class-size retained; supervisor GDP/education axis via 전문대학및대학교수,A
+국민건강결과_최종.csv,아침결식예방인구율_표준화율,13,1.0,INCLUDE,D4 hygiene-food,Breakfast-eating rate,±,% (age-std),home-prepared food proxy,A
+국민건강결과_최종.csv,병실수_계,12,0.918,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,병상수_계,12,0.918,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,일반입원실_병실수,10,0.765,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,일반입원실_병상수,10,0.765,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,정신과폐쇄_병실수,10,0.534,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,정신과폐쇄_병상수,10,0.534,EXCLUDE,,,,,unrelated clinical/social domain,A
+국민건강결과_최종.csv,중환자실_병실수,10,0.538,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,중환자실_병상수,10,0.538,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,격리병실_병실수,10,0.497,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,격리병실_병상수,10,0.497,INCLUDE,D7 detection,Isolation beds,±,per 100k pop,infectious-disease capacity,A
+국민건강결과_최종.csv,자기공명영상기,12,0.721,EXCLUDE,,,,,imaging equipment: no EHEC role,A
+국민건강결과_최종.csv,유방촬영용장치,12,0.855,EXCLUDE,,,,,imaging equipment: no EHEC role,A
+국민건강결과_최종.csv,양전자방사단층촬영,12,0.328,EXCLUDE,,,,,imaging equipment: no EHEC role,A
+국민건강결과_최종.csv,체외충격파쇄석기,12,0.637,EXCLUDE,,,,,imaging equipment: no EHEC role,A
+국민건강결과_최종.csv,초음파영상진단기,12,0.921,EXCLUDE,,,,,imaging equipment: no EHEC role,A
+국민건강결과_최종.csv,관내진료실인원_전체,12,0.923,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,관내진료비_전체,13,0.971,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,관내진료실인원_입원,12,0.912,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,관내진료비_입원,13,0.961,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,관내진료실인원_외래,12,0.922,INCLUDE,D7 detection,In-district outpatient volume,±,per 1000 pop,local health-seeking,A
+국민건강결과_최종.csv,관내진료비_외래,13,0.998,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,관외진료실인원_전체,12,0.923,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,관외진료비_전체,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,관외진료실인원_입원,12,0.915,EXCLUDE,,,,,utilisation series: outpatient volume retained,A
+국민건강결과_최종.csv,관외진료비_입원,12,0.916,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,관외진료실인원_외래,12,0.907,INCLUDE,D7 detection,Out-of-district outpatient volume,±,per 1000 pop,referral outflow; rural detection leakage,A
+국민건강결과_최종.csv,관외진료비_외래,12,0.907,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,당뇨병진단경험자의치료율_표준화율,12,0.923,EXCLUDE,,,,,chronic-disease / behaviour sub-series: canonical series retained,A
+국민건강결과_최종.csv,자궁경부암결과_반응성소견및감염성질환,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암결과_비정형세포이상,12,0.923,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,자궁경부암결과_자궁경부암전구단계의심,12,0.789,EXCLUDE,,,,,outcome/screening result or cost: not an exposure,A
+국민건강결과_최종.csv,주관적건강수준인지율_표준화율,13,0.999,INCLUDE,D6 behaviour,Good self-rated health,±,% (age-std),health status vs health-seeking,A
+국토이용현황_전처리_수정.csv,전,14,0.981,INCLUDE,D2 agri-land,Upland field (dry-field) area,+,share of district area,manure application; produce contamination,A
+국토이용현황_전처리_수정.csv,답,14,0.965,INCLUDE,D2 agri-land,Paddy field area,±,share of district area,irrigation water; weaker manure link than upland,A
+국토이용현황_전처리_수정.csv,과수원,14,0.844,INCLUDE,D2 agri-land,Orchard area,+,share of district area,manure-amended horticulture; fresh produce,A
+국토이용현황_전처리_수정.csv,목장용지,14,0.812,INCLUDE,D1 reservoir,Pasture land area,+,per km2 of district,ruminant grazing land; manure-to-environment pathway,A
+국토이용현황_전처리_수정.csv,임야,14,0.985,INCLUDE,D2 agri-land,Forest area,-,share of district area,low human-livestock density; dilution,A
+국토이용현황_전처리_수정.csv,광천지,14,0.162,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,염전,14,0.155,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,대,14,0.988,INCLUDE,D2 agri-land,Residential building-site area,-,share of district area,"urbanicity proxy (context, not exposure)",A
+국토이용현황_전처리_수정.csv,공장용지,14,0.941,INCLUDE,D2 agri-land,Factory land area,0,share of district area,negative control: industrial land,A
+국토이용현황_전처리_수정.csv,학교용지,14,0.988,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,주차장,14,0.988,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,주유소용지,14,0.988,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,창고용지,14,0.95,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,도로,14,0.988,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,철도용지,14,0.761,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,제방,14,0.973,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,하천,14,0.985,INCLUDE,D2 agri-land,River/stream land area,+,share of district area,surface-water transport of runoff,A
+국토이용현황_전처리_수정.csv,구거,14,0.988,INCLUDE,D2 agri-land,Irrigation ditch area,+,share of district area,irrigation channel density,A
+국토이용현황_전처리_수정.csv,유지,14,0.954,INCLUDE,D2 agri-land,Reservoir/pond land area,+,share of district area,standing water; irrigation source,A
+국토이용현황_전처리_수정.csv,양어장,14,0.7,INCLUDE,D2 agri-land,Fish-farm land area,0,share of district area,"negative control: aquaculture, not EHEC pathway",A
+국토이용현황_전처리_수정.csv,수도용지,14,0.985,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,체육용지,14,0.948,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,유원지,14,0.727,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,종교용지,14,0.988,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,사적지,14,0.682,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,묘지,14,0.973,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+국토이용현황_전처리_수정.csv,잡종지,14,0.988,EXCLUDE,,,,,land use / transport with no plausible EHEC pathway,A
+생활용지하수이용현황_전처리.csv,총 계_개소수,11,0.99,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+생활용지하수이용현황_전처리.csv,총 계_이용량,11,0.99,INCLUDE,D3 water-sanit,Total living-use groundwater volume,+,m3 per 1000 pop,alternate total series,A
+생활용지하수이용현황_전처리.csv,가정용_개소수,11,0.978,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,가정용_이용량,11,0.973,INCLUDE,D3 water-sanit,Household (living-use) groundwater volume,+,m3 per 1000 pop,alternate series for household use; pick one after overlap check,A
+생활용지하수이용현황_전처리.csv,일반용_개소수,11,0.99,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,일반용_이용량,11,0.99,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,학교용_개소수,11,0.906,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,학교용_이용량,11,0.901,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,민방위용_개소수,11,0.897,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,민방위용_이용량,11,0.874,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,공동주택용_개소수,11,0.839,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,공동주택용_이용량,11,0.831,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,간이상수도용_개소수,11,0.758,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,간이상수도용_이용량,11,0.751,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,상수도용_개소수,11,0.51,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,상수도용_이용량,11,0.5,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,농업·생활겸용_개소수,11,0.808,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,농업·생활겸용_이용량,11,0.789,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+생활용지하수이용현황_전처리.csv,기타_개소수,11,0.981,EXCLUDE,,,,,facility count: volume series retained instead,A
+생활용지하수이용현황_전처리.csv,기타_이용량,11,0.979,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+음용지하수이용현황_전처리.csv,개소수(총합),11,0.895,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+음용지하수이용현황_전처리.csv,총이용량,11,0.888,INCLUDE,D3 water-sanit,Drinking-water groundwater use,+,m3 per 1000 pop,untreated groundwater as drinking source; canonical EHEC waterborne route,A
+음용지하수이용현황_전처리.csv,가정용,11,0.876,INCLUDE,D3 water-sanit,Household drinking groundwater use,+,m3 per 1000 pop,household-level untreated water,A
+음용지하수이용현황_전처리.csv,일반용,11,0.894,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+음용지하수이용현황_전처리.csv,학교용,11,0.815,INCLUDE,D3 water-sanit,School groundwater use,+,m3 per 1000 pop,child exposure route; EHEC is pediatric,A
+음용지하수이용현황_전처리.csv,민방위용,11,0.823,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+음용지하수이용현황_전처리.csv,공동주택용,11,0.752,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+음용지하수이용현황_전처리.csv,간이상수도용,11,0.661,INCLUDE,D3 water-sanit,Simple-waterworks groundwater use,+,m3 per 1000 pop,"small rural systems, minimal treatment",A
+음용지하수이용현황_전처리.csv,농업·생활겸용,11,0.706,INCLUDE,D3 water-sanit,Mixed agricultural-domestic groundwater,+,m3 per 1000 pop,irrigation-domestic cross-use,A
+음용지하수이용현황_전처리.csv,기타,11,0.885,EXCLUDE,,,,,groundwater sub-series: drinking-water series retained,A
+의료인력.csv,분기,14,1.0,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+의료인력.csv,value,14,0.692,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+의료통계_전처리.csv,값,13,0.865,EXCLUDE,,,,,"structural/denominator column, not a covariate",A
+재정자립도_전처리.csv,재정자립도(세입과목개편전),14,0.978,EXCLUDE,,,,,duplicate series of a retained variable (사설학원수/요양기관수_전체/초등학교수/재정자립도 구판),A
+국민건강결과_최종.csv,총사망_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망_사망자수_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_사망자수_남자,13,0.968,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_사망자수_여자,13,0.968,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_사망자수_전체,13,0.94,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_사망자수_남자,13,0.889,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_사망자수_여자,13,0.817,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_사망자수_전체,13,0.961,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_사망자수_남자,13,0.923,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_사망자수_여자,13,0.942,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_사망자수_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_사망자수_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_사망자수_전체,13,0.94,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_사망자수_남자,13,0.934,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_사망자수_여자,13,0.406,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_사망자수_여자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_사망자수_전체,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_사망자수_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_사망자수_여자,11,0.806,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_사망자수_전체,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_사망자수_남자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_사망자수_여자,13,0.96,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_사망자수_전체,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_사망자수_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_사망자수_여자,11,0.815,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_사망자수_전체,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_사망자수_남자,13,0.073,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_사망자수_여자,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자궁의악성신생물_사망자수_여자,13,0.889,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,전립선의악성신생물_사망자수_남자,13,0.947,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_사망자수_전체,13,0.931,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_사망자수_남자,13,0.872,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_사망자수_여자,13,0.821,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_사망자수_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_사망자수_남자,13,0.965,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_사망자수_여자,13,0.966,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_사망자수_전체,13,0.967,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_사망자수_남자,13,0.939,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_사망자수_여자,13,0.944,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_사망자수_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_사망자수_남자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_사망자수_여자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_사망자수_전체,13,0.957,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_사망자수_남자,13,0.901,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_사망자수_여자,13,0.947,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,귀및유돌의질환_사망자수_전체,13,0.019,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,귀및유돌의질환_사망자수_남자,12,0.009,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_사망자수_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_사망자수_전체,13,0.97,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_사망자수_남자,13,0.931,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_사망자수_여자,13,0.964,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_사망자수_남자,13,0.966,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_사망자수_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_사망자수_남자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_사망자수_여자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_사망자수_남자,13,0.97,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_사망자수_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_사망자수_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_사망자수_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_사망자수_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_사망자수_남자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_사망자수_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_사망자수_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_사망자수_남자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_사망자수_여자,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_사망자수_전체,13,0.773,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_사망자수_남자,13,0.48,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_사망자수_여자,13,0.656,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_사망자수_전체,13,0.926,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_사망자수_남자,13,0.784,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_사망자수_여자,13,0.872,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_사망자수_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_사망자수_남자,13,0.959,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_사망자수_여자,13,0.967,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_사망자수_전체,13,0.615,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_사망자수_남자,13,0.501,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_사망자수_여자,13,0.447,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_사망자수_남자,12,0.886,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_사망자수_여자,12,0.894,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_사망자수_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_사망자수_남자,12,0.895,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_사망자수_여자,12,0.895,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_사망자수_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_사망자수_남자,12,0.892,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_사망자수_여자,12,0.855,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_사망자수_전체,13,0.797,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_사망자수_남자,12,0.678,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_사망자수_여자,12,0.352,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,연기불및불꽃에노출_사망자수_전체,11,0.516,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,연기불및불꽃에노출_사망자수_남자,10,0.382,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,연기불및불꽃에노출_사망자수_여자,10,0.222,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유독성물질에의한불의의중독및노출_사망자수_전체,12,0.519,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유독성물질에의한불의의중독및노출_사망자수_남자,12,0.422,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유독성물질에의한불의의중독및노출_사망자수_여자,12,0.241,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_사망자수_전체,10,0.741,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_사망자수_남자,10,0.741,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_사망자수_여자,10,0.729,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,인구10만명당교통사고_사망자수,12,0.916,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,인구10만명당교통사고_부상자수,12,0.915,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자동차1만대당교통사고_사망자수,12,0.916,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자동차1만대당교통사고_부상자수,12,0.918,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,시군구별교통사고_사망자수,13,0.956,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,시군구별교통사고_부상자수,13,0.959,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,시군구별교통사고_중상자수,12,0.923,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,교통사고_사망사고_부상자수,12,0.831,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,교통사고_사망사고_중상자수,12,0.746,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,대형교통사고_사망자수,12,0.087,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,대형교통사고_부상자수,12,0.186,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,대형교통사고_중상자수,12,0.167,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,음주운전교통사고_사망자수,12,0.589,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,음주운전교통사고_부상자수,12,0.87,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,음주운전교통사고_중상자수,12,0.864,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,무면허교통사고_사망자수,13,0.469,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,무면허교통사고_부상자수,13,0.952,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,무면허교통사고_중상자수,12,0.881,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,뺑소니교통사고_사망자수,13,0.377,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뺑소니교통사고_부상자수,13,0.938,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,뺑소니교통사고_중상자수,12,0.835,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,무단횡단교통사고_사망자수,10,0.623,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,무단횡단교통사고_부상자수,10,0.765,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,무단횡단교통사고_중상자수,10,0.759,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,이륜차교통사고_사망자수,12,0.693,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,이륜차교통사고_부상자수,12,0.919,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,이륜차교통사고_중상자수,12,0.9,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_사망자수,12,0.491,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자전거교통사고_부상자수,12,0.889,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_중상자수,12,0.871,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_가해운전자_사망자수,11,0.246,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자전거교통사고_가해운전자_부상자수,11,0.774,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_가해운전자_중상자수,11,0.686,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_피해운전자_사망자수,11,0.334,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자전거교통사고_피해운전자_부상자수,11,0.825,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_피해운전자_중상자수,11,0.798,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,보행교통사고_사망자수,13,0.917,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,보행교통사고_부상자수,13,0.958,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,보행교통사고_중상자수,12,0.922,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,어린이교통사고_사망자수,13,0.196,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,어린이교통사고_부상자수,13,0.954,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,어린이교통사고_중상자수,12,0.855,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,노인교통사고_사망자수,13,0.935,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노인교통사고_부상자수,13,0.959,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,노인교통사고_중상자수,12,0.923,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,노인운전자교통사고_사망자수,12,0.821,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노인운전자교통사고_부상자수,12,0.923,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,노인운전자교통사고_중상자수,11,0.845,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,여성운전자교통사고_사망자수,12,0.704,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,여성운전자교통사고_부상자수,12,0.922,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,여성운전자교통사고_중상자수,12,0.921,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,방문건강관리_질환별방문간호환자수,11,0.659,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,교통사고_사망사고_사망자수,11,0.841,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망률_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망률_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,총사망률_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_표준화사망률_전체,12,0.895,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_사망률_남자,13,0.968,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_표준화사망률_남자,12,0.89,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_사망률_여자,13,0.968,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,특정감염성및기생충성질환_표준화사망률_여자,12,0.891,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_사망률_전체,13,0.94,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_표준화사망률_전체,13,0.939,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_사망률_남자,13,0.889,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_표준화사망률_남자,13,0.889,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_사망률_여자,13,0.817,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡기결핵_표준화사망률_여자,13,0.816,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_사망률_전체,13,0.961,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_표준화사망률_전체,13,0.961,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_사망률_남자,13,0.923,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_표준화사망률_남자,13,0.923,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_사망률_여자,13,0.942,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,패혈증_표준화사망률_여자,13,0.942,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신생물_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,악성신생물_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_사망률_전체,13,0.94,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_표준화사망률_전체,13,0.94,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_사망률_남자,13,0.934,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,식도의악성신생물_표준화사망률_남자,13,0.934,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_사망률_여자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,위의악성신생물_표준화사망률_여자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_사망률_전체,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_표준화사망률_전체,10,0.742,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_사망률_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_표준화사망률_남자,10,0.742,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_사망률_여자,11,0.806,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간및간내담관의악성신생물_표준화사망률_여자,10,0.731,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_사망률_전체,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_표준화사망률_전체,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_사망률_남자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_표준화사망률_남자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_사망률_여자,13,0.96,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,췌장의악성신생물_표준화사망률_여자,13,0.96,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_사망률_전체,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_표준화사망률_전체,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_사망률_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_표준화사망률_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_사망률_여자,11,0.815,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기관및폐의악성신생물_표준화사망률_여자,11,0.815,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_사망률_전체,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_표준화사망률_전체,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_사망률_여자,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유방의악성신생물_표준화사망률_여자,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자궁의악성신생물_사망률_여자,11,0.753,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,자궁의악성신생물_표준화사망률_여자,11,0.753,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,전립선의악성신생물_사망률_남자,13,0.947,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,전립선의악성신생물_표준화사망률_남자,13,0.947,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_사망률_전체,13,0.931,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_표준화사망률_전체,13,0.931,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_사망률_남자,13,0.872,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_표준화사망률_남자,13,0.872,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_사망률_여자,13,0.821,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,백혈병_표준화사망률_여자,13,0.821,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_표준화사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_사망률_남자,13,0.965,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_표준화사망률_남자,13,0.965,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_사망률_여자,13,0.966,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,당뇨병_표준화사망률_여자,13,0.966,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_사망률_전체,13,0.967,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_표준화사망률_전체,13,0.967,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_사망률_남자,13,0.939,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_표준화사망률_남자,13,0.939,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_사망률_여자,13,0.944,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,정신및행동장애_표준화사망률_여자,13,0.944,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_표준화사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_사망률_남자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_표준화사망률_남자,13,0.963,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_사망률_여자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,신경계통의질환_표준화사망률_여자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_사망률_전체,13,0.957,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_표준화사망률_전체,13,0.957,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_사망률_남자,13,0.901,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_표준화사망률_남자,13,0.901,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_사망률_여자,13,0.947,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,알츠하이머병_표준화사망률_여자,13,0.947,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,순환계통질환_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_사망률_전체,13,0.97,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_표준화사망률_전체,13,0.97,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_사망률_남자,13,0.931,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_표준화사망률_남자,13,0.931,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_사망률_여자,13,0.964,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고혈압성질환_표준화사망률_여자,13,0.964,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,심장질환_표준화사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_사망률_남자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_표준화사망률_남자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_사망률_여자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,허혈성심장질환_표준화사망률_여자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_사망률_남자,13,0.97,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_표준화사망률_남자,13,0.97,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,기타심장질환_표준화사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,뇌혈관질환_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,호흡계통의질환_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_사망률_남자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_표준화사망률_남자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,폐렴_표준화사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_표준화사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_사망률_남자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_표준화사망률_남자,13,0.969,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_사망률_여자,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,간질환_표준화사망률_여자,13,0.925,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_사망률_전체,13,0.773,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_표준화사망률_전체,13,0.773,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_사망률_남자,13,0.48,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_표준화사망률_남자,13,0.48,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_사망률_여자,13,0.656,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,피부및피하조직의질환_표준화사망률_여자,13,0.656,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_사망률_전체,13,0.926,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_표준화사망률_전체,12,0.854,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_사망률_남자,13,0.784,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_표준화사망률_남자,12,0.724,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_사망률_여자,13,0.872,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,근골격계통및결합조직의질환_표준화사망률_여자,12,0.807,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_표준화사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_사망률_남자,13,0.959,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_표준화사망률_남자,13,0.959,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_사망률_여자,13,0.967,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,비뇨생식계통의질환_표준화사망률_여자,13,0.967,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_사망률_전체,13,0.615,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_표준화사망률_전체,12,0.576,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_사망률_남자,13,0.501,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_표준화사망률_남자,12,0.471,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_사망률_여자,13,0.447,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,출생전후기에기원한특정병태_표준화사망률_여자,12,0.42,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_사망률_남자,13,0.961,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_표준화사망률_남자,13,0.961,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,노쇠_표준화사망률_여자,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_표준화사망률_전체,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_표준화사망률_남자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,질병이환및사망의외인_표준화사망률_여자,13,0.972,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_표준화사망률_전체,13,0.971,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_사망률_남자,13,0.968,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_표준화사망률_남자,13,0.968,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_사망률_여자,13,0.927,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,운수사고_표준화사망률_여자,13,0.927,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_사망률_전체,12,0.736,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_표준화사망률_전체,13,0.797,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_사망률_남자,13,0.734,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,불의의익사및익수_표준화사망률_남자,13,0.734,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,연기불및불꽃에노출_사망률_전체,10,0.47,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,연기불및불꽃에노출_표준화사망률_전체,11,0.516,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유독성물질에의한불의의중독및노출_사망률_전체,12,0.519,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,유독성물질에의한불의의중독및노출_표준화사망률_전체,12,0.519,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_사망률_전체,10,0.741,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_표준화사망률_전체,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_사망률_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_표준화사망률_남자,11,0.818,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_사망률_여자,11,0.805,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,고의적자해_표준화사망률_여자,11,0.805,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,장티푸스_발생률,12,0.282,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,파라티푸스_발생률,12,0.145,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,세균성이질_발생률,12,0.232,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,장출혈성대장균감염증_발생률,12,0.253,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,백일해_발생률,12,0.294,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,파상풍_발생률,12,0.09,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,홍역_발생률,11,0.09,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,유행성이하선염_발생률,12,0.896,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,일본뇌염_발생률,12,0.066,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,수두_발생률,12,0.92,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,말라리아_발생률,12,0.437,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,성홍렬_발생률,10,0.61,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,수막구균성수막염_발생률,11,0.028,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,레지오넬라증_발생률,12,0.335,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,발진열_발생률,12,0.055,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,쯔쯔가무시증_발생률,12,0.879,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,렙토스피라증_발생률,12,0.239,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,브루셀라증_발생률,12,0.026,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,신증후군출혈열_발생률,12,0.546,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,뎅기열_발생률,12,0.324,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,큐열_발생률,12,0.151,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,고혈압진단경험률_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,고혈압진단경험률_30세이상_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,당뇨병진단경험률_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,당뇨병진단경험률_30세이상_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,비만율_자가보고_조율,12,0.919,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,스트레스인지율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,우울감경험률_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,주관적구강건강이나쁜인구의분율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,연간사고및중독경험률_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,연간사고및중독건수율_조율,12,0.922,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,인구10만명당교통사고_사고건수,11,0.799,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자동차1만대당교통사고_사고건수,13,0.954,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,시군구별교통사고_사고건수,13,0.959,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,교통사고_사망사고_사고건수,12,0.92,EXCLUDE,,,,,"outcome: mortality (consequence, not exposure)",A
+국민건강결과_최종.csv,대형교통사고_사고건수,12,0.197,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,음주운전교통사고_사고건수,12,0.87,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,무면허교통사고_사고건수,13,0.952,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,뺑소니교통사고_사고건수,13,0.942,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,무단횡단교통사고_사고건수,10,0.766,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,이륜차교통사고_사고건수,12,0.921,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_사고건수,12,0.89,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_가해운전자_사고건수,11,0.779,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,자전거교통사고_피해운전자_사고건수,11,0.826,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,보행교통사고_사고건수,13,0.959,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,어린이교통사고_사고건수,13,0.922,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,노인교통사고_사고건수,13,0.957,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,노인운전자교통사고_사고건수,12,0.923,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,여성운전자교통사고_사고건수,12,0.922,EXCLUDE,,,,,injury/safety: no plausible EHEC pathway,A
+국민건강결과_최종.csv,주관적비만인지율_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,체중조절시도율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,평생음주율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,월간음주율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,고혈압관리교육이수율_조율,11,0.845,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,중등도이상신체활동실천율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,걷기실천율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,건강생활실천율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,운전자석안전벨트착용률_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,현재비흡연자의가정실내간접흡연노출률_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,현재흡연율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,남자현재흡연율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,현재흡연자의금연시도율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,연간인플루엔자예방접종률_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,소아청소년과전문의,13,0.954,EXCLUDE,,,,,sub-population/duplicate series,A
+국민건강결과_최종.csv,의원_소아청소년과,13,0.758,EXCLUDE,,,,,sub-population/duplicate series,A
+국민건강결과_최종.csv,고혈압진단경험자의치료율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,고혈압진단경험자의치료율_30세이상_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,당뇨병진단경험자의치료율_30세이상_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,연간당뇨병안질환합병증검사수진율_30세이상_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,인구십만명당문화기반시설수,12,0.919,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,다문화혼인비중,12,0.922,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,다문화이혼건수,12,0.922,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,다문화이혼비중,12,0.922,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,다문화출생아수,12,0.922,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,교통문화지수,12,0.911,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,주민1만명당화재발생건수,13,0.999,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,공원수,13,0.996,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,공원면적,13,0.996,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,체육시설수_전체,13,0.89,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,체육시설면적_전체,13,0.89,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,영양표시독해율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,연간음주율_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,당뇨병관리교육이수율_조율,11,0.845,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,스트레스로인한정신상담률_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,우울증상으로인한정신상담률_조율,12,0.919,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,격렬한신체활동실천율_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,중등도신체활동실천율_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,현재비흡연자의직장실내간접흡연노출률_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,연간보건기관이용률_조율,10,0.769,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,아침결식예방인구율_조율,13,1.0,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,현재흡연자의1개월내금연계획률_조율,11,0.839,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,A형간염_발생률,12,0.788,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,B형간염_발생률,12,0.494,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,한센병_발생률,12,0.015,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,라임병_발생률,12,0.063,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,유비저_발생률,11,0.01,EXCLUDE,,,,,outcome: disease incidence (leakage risk),A
+국민건강결과_최종.csv,혈압수치인지율_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,혈당수치인지율_조율,11,0.846,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,당뇨병진단경험자의치료율_조율,12,0.923,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국민건강결과_최종.csv,인구천명당공원개수,12,0.908,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,인구천명당체육시설수,12,0.809,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,인구천명당체육시설면적,12,0.809,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+국민건강결과_최종.csv,주관적건강수준인지율_조율,13,0.999,EXCLUDE,,,,,crude duplicate; age-standardized version retained,A
+국토이용현황_전처리_수정.csv,공원,14,0.981,EXCLUDE,,,,,administrative/leisure: no plausible EHEC pathway,A
+식중독최종.csv,month,14,1.0,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종.csv,week,14,1.0,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종.csv,cases,14,0.014,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종.csv,population,14,1.0,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종.csv,crude_rate,14,0.014,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종_건수.csv,month,14,1.0,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종_건수.csv,week,14,1.0,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종_건수.csv,cases,14,0.002,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종_건수.csv,population,14,1.0,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+식중독최종_건수.csv,crude_rate,14,0.002,EXCLUDE,,,,,outcome: foodborne-illness counts (direct leakage),A
+양식데이터_연도별.csv,계_먹이,14,0.03,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,계_생산금액,14,0.03,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,계_생산량,14,0.029,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,계_입식량,14,0.026,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,계_현사육량,12,0.036,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,가자미류_먹이,14,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,가자미류_생산금액,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,가자미류_생산량,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,가자미류_입식량,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,가자미류_현사육량,12,0.01,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,고등어류_먹이,14,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,고등어류_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,고등어류_생산량,14,0.001,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,고등어류_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,고등어류_현사육량,12,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,넙치류_먹이,14,0.017,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,넙치류_생산금액,14,0.016,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,넙치류_생산량,14,0.015,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,넙치류_입식량,14,0.012,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,넙치류_현사육량,12,0.019,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,농어류_먹이,14,0.01,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,농어류_생산금액,14,0.005,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,농어류_생산량,14,0.005,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,농어류_입식량,14,0.005,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,농어류_현사육량,12,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,능성어_먹이,14,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,능성어_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,능성어_생산량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,능성어_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,능성어_현사육량,12,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참다랑어_먹이,14,0.001,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,감성돔_먹이,14,0.01,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,감성돔_생산금액,14,0.006,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,감성돔_생산량,14,0.006,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,감성돔_입식량,14,0.006,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,감성돔_현사육량,12,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참돔_먹이,14,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참돔_생산금액,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참돔_생산량,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참돔_입식량,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참돔_현사육량,12,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,돌돔_먹이,14,0.013,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,돌돔_생산금액,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,돌돔_생산량,14,0.006,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,돌돔_입식량,14,0.008,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,돌돔_현사육량,12,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타돔류_먹이,14,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타돔류_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타돔류_생산량,14,0.001,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타돔류_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타돔류_현사육량,12,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,민어_먹이,11,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,민어_생산금액,10,0.0,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,방어_먹이,14,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,방어_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,방어_생산량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,방어_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,방어_현사육량,12,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,복어류_먹이,14,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,복어류_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,복어류_생산량,14,0.001,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,복어류_입식량,14,0.001,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,복어류_현사육량,12,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,조피볼락_먹이,14,0.016,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,조피볼락_생산금액,14,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,조피볼락_생산량,14,0.009,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,조피볼락_입식량,14,0.01,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,조피볼락_현사육량,12,0.016,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타볼락류_먹이,14,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타볼락류_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타볼락류_생산량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타볼락류_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,기타볼락류_현사육량,12,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,숭어류_먹이,14,0.01,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,숭어류_생산금액,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,숭어류_생산량,14,0.007,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,숭어류_입식량,14,0.008,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,숭어류_현사육량,12,0.012,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,전갱이류_먹이,10,0.001,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,전어_먹이,14,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,전어_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,전어_생산량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,전어_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참조기_먹이,14,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참조기_입식량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,참조기_현사육량,12,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,쥐치류_먹이,14,0.005,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,쥐치류_생산금액,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,쥐치류_생산량,14,0.002,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,쥐치류_입식량,14,0.003,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+양식데이터_연도별.csv,쥐치류_현사육량,12,0.004,EXCLUDE,,,,,marine/aquaculture: not an EHEC pathway (retain for HAV/norovirus),A
+1인가구_전처리.csv,1인가구,10,1.0,INCLUDE,D5 SES,Single-person households,±,% of households,household structure; eating-out [Tier B: time-invariant district mean],B
+1인가구_전처리.csv,주택 이외의 거처_계,10,1.0,EXCLUDE,,,,,housing sub-type: detached share retained,B
+1인가구_전처리.csv,주택_계,10,1.0,EXCLUDE,,,,,housing sub-type: detached share retained,B
+1인가구_전처리.csv,주택_다세대주택,10,0.997,EXCLUDE,,,,,housing sub-type: detached share retained,B
+1인가구_전처리.csv,주택_단독주택,10,1.0,INCLUDE,D5 SES,Detached-house share,+,% of dwellings,rural/older housing; septic reliance [Tier B: time-invariant district mean],B
+1인가구_전처리.csv,주택_비주거용 건물 내 주택,10,0.997,EXCLUDE,,,,,housing sub-type: detached share retained,B
+1인가구_전처리.csv,주택_아파트,10,0.998,EXCLUDE,,,,,housing sub-type: detached share retained,B
+1인가구_전처리.csv,주택_연립주택,10,0.998,EXCLUDE,,,,,housing sub-type: detached share retained,B
+merged_분뇨찌꺼기처리.csv,발생량(A)=(B)+(C),10,0.307,INCLUDE,D3 water-sanit,Night-soil sludge generation,+,tonnes per 1000 pop,excreta volume [Tier B: time-invariant district mean],B
+merged_분뇨찌꺼기처리.csv,처분량_계(B),10,0.305,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_분뇨찌꺼기처리.csv,처분량_재활용,10,0.205,INCLUDE,D3 water-sanit,Sludge recycled (land application),+,tonnes per km2,sludge-to-land: manure analogue [Tier B: time-invariant district mean],B
+merged_분뇨찌꺼기처리.csv,처분량_육상매립,10,0.053,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_분뇨찌꺼기처리.csv,처분량_소각,10,0.046,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_분뇨찌꺼기처리.csv,처분량_연료화,9,0.013,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_분뇨찌꺼기처리.csv,처분량_기타,10,0.034,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_분뇨찌꺼기처리.csv,미처분량(이월량)(C),10,0.018,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_분뇨찌꺼기처리.csv,분뇨처리장명,9,0.276,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_세부용도별지하수.csv,먹는샘물_시설수,12,0.139,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_세부용도별지하수.csv,먹는샘물_이용량,12,0.123,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_세부용도별지하수.csv,기타_시설수,12,0.522,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_세부용도별지하수.csv,기타_이용량,12,0.457,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,개·보수관로_전체보수(m)_계,11,0.742,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,개·보수관로_부분보수(개소)_계,7,0.339,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,개·보수관로_부분보수(개소)_합류식,7,0.13,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,개·보수관로_부분보수(개소)_분류식_우수,7,0.169,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,개·보수관로_부분보수(개소)_분류식_오수,7,0.259,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,맨홀(개소)_합류식맨홀,7,0.235,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,맨홀(개소)_분류식_오수맨홀,7,0.378,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,맨홀(개소)_분류식_우수맨홀,7,0.256,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,받이_빗물받이(개소),7,0.294,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,"토실,토구_토구(개소)",7,0.035,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로개보수.csv,맨홀(개소),5,0.338,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,연도,6,0.981,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,계획대비준설율(%),6,0.932,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,하수관로총시설연장(m),6,0.981,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_관로(m)_합계,6,0.965,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_관로(m)_합류식,6,0.645,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_관로(m)_분류식_우수,6,0.568,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_관로(m)_분류식_오수,6,0.685,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_맨홀(개소),6,0.707,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_오·우수받이(개소),6,0.591,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설연장및개소수_토실·토구(개소),6,0.213,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설계획연장(m),5,0.781,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설실적_금액(백만원),6,0.96,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설실적_준설량(㎥),6,0.965,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설토사처리_매립,6,0.478,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설토사처리_재활용,6,0.226,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수관로준설.csv,준설토사처리(톤)_계,6,0.934,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_미접속인구,8,0.152,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_면적(㎢),9,0.686,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역외_면적(㎢),9,0.655,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_공공하수처리인구(명),9,0.686,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_공공하수처리인구(명).2,9,0.222,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_공공하수처리인구(명).3,9,0.67,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_폐수처리인구(명),9,0.08,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_폐수처리인구(명).1,9,0.007,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_폐수처리인구(명).2,9,0.019,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수도보급률.csv,하수처리구역내_폐수처리인구(명).3,9,0.058,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수찌꺼기발생및처리.csv,연도,8,0.813,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수찌꺼기발생및처리.csv,"함수율(%,탈수기준)",7,0.645,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수찌꺼기발생및처리.csv,"찌꺼기발생량(톤/년,탈수기준)_합계",8,0.7,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수찌꺼기발생및처리.csv,"찌꺼기발생량(톤/년,탈수기준)_자체",7,0.694,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수찌꺼기발생및처리.csv,"찌꺼기발생량(톤/년,탈수기준)_외부유입량",7,0.186,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+merged_하수찌꺼기발생및처리.csv,이송처리량(㎥/년),6,0.36,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,찌꺼기처리량합계(톤/년),7,0.692,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,자체처리량(톤/년)_매립,7,0.113,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,자체처리량(톤/년)_소각,7,0.108,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,자체처리량(톤/년)_고화,7,0.009,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,자체처리량(톤/년)_건조,5,0.124,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,자체처리량(톤/년)_탄화,7,0.029,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,자체처리량(톤/년)_퇴비화,5,0.021,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,외부위탁처리량(톤/년)_소계,7,0.618,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,수도권광역위탁처리량(톤/년),7,0.08,EXCLUDE,,,,,sludge sub-series: generation + recycling retained,B
+merged_하수찌꺼기발생및처리.csv,하수처리장명,8,0.66,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+가축두수_전처리.csv,농가수(호)_합계,5,0.828,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,농가수(호)_한육우,5,0.789,INCLUDE,D1 reservoir,Beef-cattle farms,+,per km2,farm density (contact opportunity; alternate to head count) [Tier B: time-invariant district mean],B
+가축두수_전처리.csv,농가수(호)_젖소,5,0.608,INCLUDE,D1 reservoir,Dairy farms,+,per km2,alternate to head count [Tier B: time-invariant district mean],B
+가축두수_전처리.csv,농가수(호)_돼지,5,0.677,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,농가수(호)_말,5,0.578,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,농가수(호)_양·염소·사슴,5,0.683,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,농가수(호)_개,5,0.561,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+가축두수_전처리.csv,농가수(호)_가금,5,0.73,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,사육두수(두)_합계,5,0.824,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,사육두수(두)_한육우,5,0.789,INCLUDE,D1 reservoir,Beef-cattle density,+,head per km2,primary EHEC reservoir [Tier B: time-invariant district mean],B
+가축두수_전처리.csv,사육두수(두)_젖소,5,0.606,INCLUDE,D1 reservoir,Dairy-cattle density,+,head per km2,reservoir; raw-milk route [Tier B: time-invariant district mean],B
+가축두수_전처리.csv,사육두수(두)_돼지,5,0.654,INCLUDE,D1 reservoir,Swine density,0,head per km2,negative control: not an EHEC reservoir [Tier B: time-invariant district mean],B
+가축두수_전처리.csv,사육두수(두)_말,5,0.555,EXCLUDE,,,,,livestock sub-type: core reservoir + negative controls retained,B
+가축두수_전처리.csv,사육두수(두)_양·염소·사슴,5,0.678,INCLUDE,D1 reservoir,Small-ruminant density,+,head per km2,secondary ruminant reservoir (sheep/goat/deer) [Tier B: time-invariant district mean],B
+가축두수_전처리.csv,사육두수(두)_개,5,0.549,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+가축두수_전처리.csv,사육두수(두)_가금,5,0.718,INCLUDE,D1 reservoir,Poultry density,0,head per km2,negative control [Tier B: time-invariant district mean],B
+경제수준.csv,주택소유율,7,0.491,EXCLUDE,D5 SES,Home-ownership rate,-,%,duplicate of 'Home-ownership rate' from another file; higher-coverage source retained,B
+경제수준.csv,청년고용률_상반기,10,0.424,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,청년고용률_하반기,10,0.424,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,기초연금수급자율,8,0.482,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,국민기초생활보장수급자수율,9,0.586,INCLUDE,D5 SES,Basic-livelihood recipient rate,+,as-is (% of pop in source),SUPERVISOR-SPECIFIED deprivation. Source split across 6 columns (2011-17 count / 2015-23 rate / 2018-21 / 2022-23): coalesce by year as in handwashing recovery (504),A
+경제수준.csv,국민연금_지역가입자_소득신고자수,10,0.003,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,국민연금_지역가입자_납부예외자수,9,0.008,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,국민연금_임의가입자수,12,0.406,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,국민연금_임의계속가입자수,12,0.364,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+경제수준.csv,국민연금_사업장수,12,0.065,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,1인가구_60~64세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+고령인구_전처리.csv,1인가구_60세 이상 - 계,5,1.0,INCLUDE,D5 SES,Older adults living alone,±,% of older pop,isolation; rural [Tier B: time-invariant district mean],B
+고령인구_전처리.csv,1인가구_65~69세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+고령인구_전처리.csv,1인가구_70~74세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+고령인구_전처리.csv,1인가구_75~79세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+고령인구_전처리.csv,1인가구_80~84세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+고령인구_전처리.csv,1인가구_85세이상,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+고령인구_전처리.csv,계_60~64세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,계_60세 이상 - 계,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,계_65~69세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,계_70~74세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,계_75~79세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,계_80~84세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+고령인구_전처리.csv,계_85세이상,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+국민건강결과_최종.csv,악성신생물_사망자수_전체,12,0.895,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_사망자수_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_사망자수_남자,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_사망자수_여자,7,0.535,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_사망자수_전체,7,0.49,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_사망자수_남자,7,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_사망자수_여자,7,0.422,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_사망자수_전체,7,0.456,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_사망자수_남자,7,0.342,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_사망자수_여자,7,0.371,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_사망자수_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_사망자수_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_사망자수_여자,7,0.535,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,눈및눈부속기의질환_사망자수_전체,8,0.005,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,눈및눈부속기의질환_사망자수_여자,7,0.004,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,귀및유돌의질환_사망자수_여자,11,0.01,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_사망자수_전체,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_사망자수_남자,8,0.613,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_사망자수_여자,8,0.608,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_사망자수_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_사망자수_남자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_사망자수_여자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,임신출산및산후기_사망자수_여자,7,0.096,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,선천기형변형및염색체이상_사망자수_전체,7,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,선천기형변형및염색체이상_사망자수_남자,7,0.277,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,선천기형변형및염색체이상_사망자수_여자,7,0.26,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_사망자수_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_사망자수_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_사망자수_여자,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_사망자수_전체,7,0.528,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_사망자수_남자,7,0.517,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_사망자수_여자,7,0.443,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해_사망자수_전체,7,0.388,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해_사망자수_남자,7,0.309,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해_사망자수_여자,7,0.282,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,장티푸스_발생수,7,0.191,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,파라티푸스_발생수,7,0.09,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,세균성이질_발생수,7,0.151,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,장출혈성대장균감염증_발생수,7,0.105,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,백일해_발생수,7,0.143,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,파상풍_발생수,7,0.049,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,홍역_발생수,7,0.052,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,유행성이하선염_발생수,7,0.519,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,풍진_발생수,7,0.038,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일본뇌염_발생수,7,0.04,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수두_발생수,7,0.534,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,말라리아_발생수,7,0.265,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,성홍렬_발생수,7,0.421,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막구균성수막염_발생수,7,0.015,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,레지오넬라증_발생수,7,0.103,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비브리오폐혈증_발생수,7,0.101,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,발진열_발생수,7,0.04,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,쯔쯔가무시증_발생수,7,0.525,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,렙토스피라증_발생수,7,0.119,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,브루셀라증진_발생수,6,0.018,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,신증후군출혈열_발생수,7,0.331,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,뎅기열_발생수,7,0.201,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,큐열_발생수,7,0.052,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도로10km당교통사고_사망자수,9,0.685,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도로10km당교통사고_부상자수,10,0.764,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구10만명당보행자중교통사고사망자수,9,0.669,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_잇솔질교습_수혜자수,8,0.06,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_노인의치보철사업_수혜자수,8,0.452,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구수_20-44세,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구수_45-64세,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민기초생활수급자수,7,0.521,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_치아홈메우기수혜자수,8,0.155,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,A형간염_발생수,7,0.436,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,B형간염_발생수,7,0.254,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,한센병_발생수,7,0.011,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,매독1기_발생수,7,0.369,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,매독2기_발생수,7,0.272,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,CJD_vCJD_발생수,7,0.083,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,라임병_발생수,7,0.028,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,유비저_발생수,6,0.005,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,치쿤쿠니야열_발생수,5,0.007,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,중증열성혈소판감소증후군_발생수,5,0.109,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기초연금수급자수,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_사망자수_전체",5,0.357,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_사망자수_남자",5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_사망자수_여자",5,0.355,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_사망자수_전체",5,0.332,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_사망자수_남자",5,0.299,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_사망자수_여자",5,0.287,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_사망자수_전체,5,0.32,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_사망자수_남자,5,0.248,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_사망자수_여자,5,0.279,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_사망자수_전체",6,0.433,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_사망자수_남자",6,0.43,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_사망자수_여자",6,0.432,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_사망자수_전체,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_사망자수_남자,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_사망자수_여자,5,0.348,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_사망자수_전체,8,0.587,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_사망자수_남자,8,0.587,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_사망자수_여자,8,0.586,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"임신,출산및산후기_사망자수_여자",6,0.055,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_사망자수_전체",6,0.263,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_사망자수_남자",6,0.189,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_사망자수_여자",6,0.182,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_사망자수_전체",6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_사망자수_남자",6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_사망자수_여자",5,0.357,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_사망자수_전체,6,0.43,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_사망자수_남자,5,0.349,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_사망자수_여자,5,0.311,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_사망자수_전체,5,0.234,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_사망자수_남자,5,0.173,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_사망자수_여자,5,0.166,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,장티푸스_발생자수,5,0.091,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,파라티푸스_발생자수,5,0.055,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,세균성이질_발생자수,5,0.081,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,장출혈성대장균감염증_발생자수,5,0.148,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,A형간염_발생자수,5,0.352,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,백일해_발생자수,5,0.151,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,파상풍_발생자수,5,0.042,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,유행성이하선염_발생자수,5,0.378,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일본뇌염_발생자수,5,0.025,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수두_발생자수,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,B형간염_발생자수,5,0.24,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,말라리아_발생자수,5,0.171,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,한센병_발생자수,5,0.005,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,레지오넬라증_발생자수,5,0.232,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비브리오패혈증_발생자수,5,0.073,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,발진열_발생자수,5,0.015,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,쯔쯔가무시증_발생자수,5,0.355,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,렙토스피라증_발생자수,5,0.12,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,브루셀라증_발생자수,5,0.006,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,신증후군출혈열_발생자수,5,0.215,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,뎅기열_발생자수,5,0.123,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,큐열_발생자수,5,0.1,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,라임병_발생자수,5,0.036,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,유비저_발생자수,5,0.005,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,치쿤구니야열_발생자수,5,0.013,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지카바이러스감염증_발생자수,5,0.004,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도시인구수,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,농촌인구수,6,0.279,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_치면세마수혜자수,7,0.176,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,악성신생물_사망률_전체,12,0.895,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_사망률_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_표준화사망률_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_사망률_남자,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_표준화사망률_남자,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_사망률_여자,7,0.535,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결장직장및항문악성신생물_표준화사망률_여자,7,0.535,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_사망률_전체,7,0.49,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_표준화사망률_전체,7,0.49,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_사망률_남자,7,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_표준화사망률_남자,7,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_사망률_여자,7,0.422,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,수막뇌중추신경계의악성신생물_표준화사망률_여자,7,0.422,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_사망률_전체,7,0.456,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_표준화사망률_전체,7,0.455,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_사망률_남자,7,0.342,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_표준화사망률_남자,7,0.342,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_사망률_여자,7,0.371,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조혈기관과매커니즘을침범하는특정장애_표준화사망률_여자,7,0.37,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_사망률_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_표준화사망률_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_사망률_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_표준화사망률_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_사망률_여자,7,0.535,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,내분비영양및대사질환_표준화사망률_여자,7,0.535,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_사망률_전체,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_표준화사망률_전체,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_사망률_남자,8,0.613,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_표준화사망률_남자,8,0.613,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_사망률_여자,8,0.608,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도질환_표준화사망률_여자,8,0.608,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_사망률_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_표준화사망률_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_사망률_남자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_표준화사망률_남자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_사망률_여자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화계통의질환_표준화사망률_여자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,선천기형변형및염색체이상_사망률_전체,7,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,선천기형변형및염색체이상_표준화사망률_전체,7,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_사망률_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_표준화사망률_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_사망률_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_표준화사망률_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_사망률_여자,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,달리분류되지않은증상징후_표준화사망률_여자,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_사망률_전체,7,0.528,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_표준화사망률_전체,7,0.528,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_사망률_남자,7,0.517,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_표준화사망률_남자,7,0.517,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_사망률_여자,7,0.443,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상추락_표준화사망률_여자,7,0.443,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해_사망률_전체,7,0.388,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해_표준화사망률_전체,7,0.388,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,콜레라_발생률,6,0.006,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,풍진_발생률,8,0.04,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비브리오폐혈증_발생률,7,0.101,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,관절염진단경험률_50세이상_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,관절염진단경험률_50세이상_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비만율_자가보고_남자_조율,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비만율_자가보고_남자_표준화율,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비만율_자가보고_여자_조율,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비만율_자가보고_여자_표준화율,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,삶의질지수_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,삶의질지수_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간침상와병경험률_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간침상와병경험률_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간결근결석경험률_조율,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간결근결석경험률_표준화율,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저작불편호소율_조율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저작불편호소율_표준화율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도로10km당교통사고_사고건수,9,0.687,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저염선호율타입1_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저염선호율타입1_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저염선호율타입2_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저염선호율타입2_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저염선호율타입3_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저염선호율타입3_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간음주율_남자_조율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간음주율_남자_표준화율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간음주율_여자_조율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,월간음주율_여자_표준화율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,음주시작연령_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,음주시작연령_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간음주자의고위험음주율_조율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간음주자의고위험음주율_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고위험음주율_남자_조율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고위험음주율_남자_표준화율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고위험음주율_여자_조율,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고위험음주율_여자_표준화율,9,0.69,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간금연교육경험률_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간금연교육경험률_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,현재흡연자의금연교육경험률_조율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,현재흡연자의금연교육경험률_표준화율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,관절염관리교육이수율_조율,7,0.534,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,관절염관리교육이수율_표준화율,7,0.534,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간금연캠페인경험률_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간금연캠페인경험률_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,하루평균수면시간,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,하루평균수면시간_표준화,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,점심식사후칫솔질실천율_조율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,점심식사후칫솔질실천율_표준화율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,동승차량앞좌석안전벨트착용률_조율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,동승차량앞좌석안전벨트착용률_표준화율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,흡연시작연령_표준화,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,건강검진수진율_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,건강검진수진율_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,암검진율_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,암검진율_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간구강검진수진율_조율,8,0.573,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간구강검진수진율_표준화율,8,0.573,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_합계,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_의사,6,0.432,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_치과의사,6,0.361,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_한의사,6,0.361,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_약사,6,0.152,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_간호사,6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_영양사,6,0.273,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_방사선사,6,0.433,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_임상병리사,6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_치과위생사,6,0.393,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_물리치료사,6,0.419,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_간호조무사,5,0.271,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_위생사,5,0.142,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_행정직,6,0.387,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_보건직,6,0.398,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건소인력_기능직등,6,0.421,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,전문의합계,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,의원_마취통증의학과,8,0.498,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간당뇨병신장질환합병증검사수진율_30세이상_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간필요의료서비스미치료율_조율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간필요의료서비스미치료율_표준화율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,필요의료서비스미치료자의경제적이유로인한미치료율_조율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,필요의료서비스미치료자의경제적이유로인한미치료율_표준화율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,상용직비중,8,0.416,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,상용근로자,8,0.416,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,임금근로자,8,0.416,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_대상자수,9,0.32,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_전체,9,0.339,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_고혈압,9,0.338,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_당뇨,9,0.34,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_비만·고지혈증,9,0.316,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_암예방,9,0.263,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_아토피질환(환경성질환),9,0.195,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_뇌심혈관계질환,9,0.313,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_소화기계질환,9,0.014,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_치매,9,0.316,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,방문건강관리_성인병예방관리_기타,9,0.064,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도시인구,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,농촌인구,7,0.326,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_합계,7,0.513,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_1급,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_2급,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_3급,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_4급,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_5급,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,등록장애인수_6급,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,시도내이동시군구내,7,0.538,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+국민건강결과_최종.csv,시도내이동시군구간전입,8,0.615,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+국민건강결과_최종.csv,시도내이동시군구간전출,8,0.615,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+국민건강결과_최종.csv,실업률,8,0.409,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고용률,8,0.414,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구십만명당사회복지시설수,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통안전지수,9,0.686,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,다문화출생비중,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_운전행태,8,0.608,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_교통안전,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_보행행태,8,0.606,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,유기물질부하량발생량,9,0.69,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,유기물질부하량방류량,9,0.683,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,폐수발생량,9,0.69,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,폐수방류량,9,0.69,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,폐수배출업소수,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생활폐기물재활용률,6,0.458,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구천명당도시공원조성면적,6,0.456,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,체육시설수_운동장,7,0.423,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,체육시설면적_운동장,7,0.423,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주점업수,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,패스트푸드점수,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,담배소매업수,5,0.372,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보행자전용도로면적비율,9,0.534,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,안전띠착용률,7,0.53,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간자동차또는오토바이음주운전경험률_조율,9,0.69,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간자동차또는오토바이음주운전경험률_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간음주운전차량동승경험률_조율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간음주운전차량동승경험률_표준화율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,매일흡연자의하루평균흡연량_조율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,매일흡연자의하루평균흡연량_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_구강보건교육실적,9,0.478,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_치아홈메우기실적,8,0.05,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_스케일링또는치면세정술실적,9,0.194,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_불소용액양치사업실적,9,0.279,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_불소도포실적,9,0.285,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_교통약자,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,스쿨존불법주차점유율,5,0.368,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구천명당유기물질부하량방류량,8,0.605,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도시지역면적,9,0.689,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,총도시림면적,5,0.383,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생활권도시림면적,5,0.382,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,산림면적,5,0.381,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가로수등도로변녹지면적,5,0.382,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,하천변녹지면적,5,0.321,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국공유지녹화지면적,5,0.322,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,학교숲면적,5,0.351,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,산림면적비율,5,0.38,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일인당총도시림면적,5,0.383,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일인당생활권도시림면적,5,0.382,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,스포츠서비스업,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,노인장기요양시설_물리작업치료사,8,0.61,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1차검진대상인원_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1차검진수검인원_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,2차검진대상인원_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,2차검진수검인원_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1차검진대상인원_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1차검진수검인원_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,2차검진대상인원_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,2차검진수검인원_남자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1차검진대상인원_여자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1차검진수검인원_여자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,2차검진대상인원_여자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,2차검진수검인원_여자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,정상B경계,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고혈압당뇨병질환의심,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,당뇨병_정상,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,당뇨병_공복혈당장애,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,당뇨병_당뇨병,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고혈압_정상,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고혈압_고혈압전단계,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,고혈압_고혈압,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_1차검진_특이소견없음,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_1차검진_2차추가진단필요,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_2차검진_특이소견없음,7,0.508,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_2차검진_인지기능저하,7,0.495,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,간암결과_이상소견없음,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,간암결과_양성질환,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,간암결과_간암의실,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_대상인원,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_1차수검인원,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_2차수검인원,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_대상인원,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_1차수검인원,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_정상A,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_정상B_경계,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_일반질환의심,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_유질환자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_정상A,7,0.532,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_정상B_경계,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_일반질환의심,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_고혈압당뇨병질환의심,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_유질환자,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_당뇨병_정상,7,0.399,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_당뇨병_공복혈당장애,7,0.44,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_당뇨병_당뇨병,7,0.48,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_고혈압_정상,7,0.432,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_고혈압_고혈압전단계,7,0.493,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_고혈압_고혈압,7,0.504,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_당뇨병_정상,7,0.389,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_당뇨병_공복혈당장애,7,0.484,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_당뇨병_당뇨병,7,0.488,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_고혈압_정상,7,0.482,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_고혈압_고혈압전단계,7,0.516,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세_고혈압_고혈압,7,0.511,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일상생활수행능력_66세_정상,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일상생활수행능력_66세_경증,7,0.527,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일상생활수행능력_66세_중등증,7,0.429,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일상생활수행능력_66세_최중증,7,0.528,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,시력_66세_정상,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,시력_66세_시력저하,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,청력_66세_정상,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,청력_66세_청력정하,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기능검사_66세_정상,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기능검사_66세_경증,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기능검사_66세_중증,7,0.537,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_노인의치보철사업실적,8,0.271,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,독거노인비율,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,총가구수,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,총가구수_20-44세,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,총가구수_45-64세,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,총가구수_65세이상,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,독거노인가구비율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택수_전체,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택수_단독주택,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택수_아파트,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택수_연립주택,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택수_다세대주택,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택수_비거주용건물내주택,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집_전체,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집_단독주택,9,0.687,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집_아파트,9,0.689,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집_연립주택,9,0.685,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집_다세대주택,7,0.536,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집_비거주용건물내주택,9,0.685,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,빈집비율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주점업,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,매독1기_발생률,7,0.369,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,매독2기_발생률,7,0.272,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,CJD_vCJD_발생률,7,0.084,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,이상지질혈증진단경험률_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,이상지질혈증진단경험률_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,이상지질혈증진단경험률_30세이상_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,이상지질혈증진단경험률_30세이상_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,관절염진단경험률_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,관절염진단경험률_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,행복감지수_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,행복감지수_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간낙상경험률_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간낙상경험률_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,현재비흡연자의공공장소간접흡연노출률_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,현재비흡연자의공공장소간접흡연노출률_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,금연구역인지율_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,금연구역인지율_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,전산화단층촬영장치CT,7,0.508,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈관조영장치Single,7,0.221,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대장이중조영촬영대장내시경검사_대장암의심,7,0.446,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대장이중조영촬영대장내시경검사_대장암,7,0.513,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대장이중조영촬영대장내시경검사_기타,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대장이중조영촬영대장내시경검사_기존암환자,7,0.495,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_66세2차수검인원,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,생애전환기_40세_고혈압당뇨병질환의심,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_40세_1차검진_특이소견없음,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_40세_1차검진_2차추가진단필요,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_40세_2차검진_특이소견없음,7,0.487,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_40세_2차검진_경계상태,7,0.348,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_40세_2차검진_우울증의심,7,0.4,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_66세_1차검진_특이소견없음,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_66세_1차검진_2차추가진단필요,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_66세_2차검진_특이소견없음,7,0.534,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_66세_2차검진_경계상태,7,0.414,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기분상태및우울_66세_2차검진_우울증의심,7,0.42,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_66세_1차검진_특이소견없음,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_66세_1차검진_2차추가진단필요,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_66세_2차검진_특이소견없음,7,0.522,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_66세_2차검진_인지기능저하,7,0.511,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,이웃상호신뢰감_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,이웃상호신뢰감_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,상호부조_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,상호부조_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,종교활동_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,종교활동_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,친목활동_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,친목활동_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,여가레저활동_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,여가레저활동_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,자선단체활동_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,자선단체활동_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역의자연환경에대한긍정적태도율_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역의자연환경에대한긍정적태도율_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역의생활환경에대한긍정적태도율_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역의생활환경에대한긍정적태도율_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아건강검진_대상인원_71m,11,0.845,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아건강검진_수검인원_71m,11,0.845,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아건강검진율_71m,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아검진판정_71m_전체,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아검진판정_71m_양호,11,0.846,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아검진판정_71m_주의,11,0.844,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아검진판정_71m_정밀검사필요,10,0.765,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영유아검진판정_71m_정밀검사필요비율,10,0.765,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_총가입자수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_사업장가입자수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_지역가입자_소득신고자수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_지역가입자_납부예외자수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_임의가입자수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_임의계속가입자수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민연금_사업장수,12,0.923,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결혼이민자_전체,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결혼이민자_남자,6,0.452,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결혼이민자_여자,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,도로면적_보행자우선도로,12,0.064,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,중증열성혈소판감소증후군_발생률,6,0.15,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,거주지외통근취업자,7,0.361,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,식사전손씻기실천율_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,식사전손씻기실천율_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,외출후손씻기실천율_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,외출후손씻기실천율_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,노인장기요양시설_영양사,10,0.748,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,의원_예방의학과,9,0.003,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_0개_전체,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_1개_전체,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_2개_전체,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_3개_전체,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_4개_전체,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_5개_전체,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_0개_남자,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_1개_남자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_2개_남자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_3개_남자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_4개_남자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_5개_남자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_0개_여자,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_1개_여자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_2개_여자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_3개_여자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_4개_여자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대사증후군위험요인_5개_여자,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_상급종합병원,7,0.149,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_권역응급의료센터,7,0.295,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_NICU(신생아집중치료실),6,0.204,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_종합병원(전체),8,0.264,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_지역응급의료센터,8,0.361,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_응급실,8,0.373,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내접근불가비율_분만실,8,0.341,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_종합병원(전체),7,0.528,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_지역응급의료센터,7,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_응급실,7,0.508,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_분만실,7,0.513,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,청년고용률_상반기,9,0.518,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,청년고용률_하반기,9,0.518,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,폐렴구균_발생률,6,0.26,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영양표시인지율_조율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영양표시인지율_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영양표시활용률_조율,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,영양표시활용률_표준화율,10,0.769,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,식품안정성확보율_조율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,식품안정성확보율_표준화율,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간음주폐해경험률_조율,6,0.46,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간음주폐해경험률_표준화율,6,0.459,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,아침식사후칫솔질실천율_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,아침식사후칫솔질실천율_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저녁식사후칫솔질실천율_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저녁식사후칫솔질실천율_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,잠자기전칫솔질실천율_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,잠자기전칫솔질실천율_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보행행태_횡단중스마트기기사용률,5,0.373,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,동승차량뒷좌석안전벨트착용률_조율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,동승차량뒷좌석안전벨트착용률_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,버스안전벨트착용률_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,버스안전벨트착용률_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간자전거음주운전경험률_조율,5,0.382,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평생흡연율_조율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평생흡연율_표준화율,9,0.692,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평생전자담배사용경험률_조율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평생전자담배사용경험률_표준화율,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,현재전자담배사용경험률_조율,5,0.379,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_상급종합병원,6,0.433,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_권역응급의료센터,6,0.361,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역안전등급_화재,9,0.686,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역안전등급_교통,9,0.686,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역안전등급_범죄,9,0.686,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역안전등급_안전사고,7,0.533,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역안전등급_자살,8,0.61,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지역안전등급_감염병,8,0.61,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,친환경인증농산물출하량_전체,10,0.684,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,친환경인증농산물출하량_유기농산물,10,0.555,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,친환경인증농산물출하량_무농약농산물,10,0.675,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원_전체,9,0.493,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원_일반,8,0.351,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원_어린이,8,0.424,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원_청소년,8,0.374,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원_기타,7,0.208,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원중일반이용자비율,5,0.256,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원중어린이의비율,7,0.375,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대중교통이용인원중청소년의비율,7,0.379,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_고혈압,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_울혈성심부전,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_협심증,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_당뇨급성합병증,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_당뇨만성합병증,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_성인천식,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_COPD,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_세균성폐렴,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_요로감염증,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_충수돌기염천공률,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_소아천식,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_소아위장관염,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_소아세균성폐렴,6,0.459,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_소아요로감염,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,예방가능입원율_소아천공성충수염,6,0.261,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,GRDP_당해년가격,5,0.385,INCLUDE,D5 SES,GRDP per capita,-,KRW per capita (derive with pop),"SUPERVISOR-SPECIFIED macro SES. 2015-2019 only, 39% district coverage: Tier B sensitivity with explicit caveat; pair with taxable income",B
+국민건강결과_최종.csv,기준시간내접근불가비율_ICU(중환자실),6,0.261,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평균연령_남자,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평균연령_여자,9,0.691,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,노후주택비율,8,0.615,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,분만합병증발생률_산욕기합병증,5,0.329,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,지카바이러스감염증_발생률,7,0.012,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,의원_직업환경의학과,8,0.003,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,간암결과_간암의심,6,0.438,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_NICU(신생아집중치료실),5,0.283,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기준시간내의료이용률_ICU(중환자실),5,0.366,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,평균연령_전체,8,0.614,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,주택소유율,7,0.537,INCLUDE,D5 SES,Home-ownership rate,-,%,wealth; 2016-2023 [Tier B: time-invariant district mean],B
+국민건강결과_최종.csv,일인당공원면적,7,0.536,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,담배소매업소수,5,0.377,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만1세_전체,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만1세_남자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만1세_여자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만2세_전체,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만2세_남자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만2세_여자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만3세_전체,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만3세_남자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,완전접종률_만3세_여자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,조산사수,7,0.093,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,심근경색증조기증상인지율_조율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,심근경색증조기증상인지율_표준화율,7,0.538,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구천명당유기물질부하량발생량,8,0.612,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구천명당폐수발생량,8,0.613,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구천명당폐수방류량,8,0.613,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,제조업사업체수,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,제조업종사자수,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보건및사회복지사업체비율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_사망률_전체",6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_표준화사망률_전체",5,0.357,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_사망률_남자",6,0.433,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_표준화사망률_남자",5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_사망률_여자",6,0.432,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"결장,직장및항문의악성신생물_표준화사망률_여자",5,0.355,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_사망률_전체",5,0.332,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_표준화사망률_전체",5,0.332,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_사망률_남자",5,0.299,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_표준화사망률_남자",5,0.299,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_사망률_여자",5,0.287,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"수막,뇌및기타중추신경계통의악성신생물_표준화사망률_여자",5,0.287,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_사망률_전체,5,0.32,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_표준화사망률_전체,5,0.319,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_사망률_남자,5,0.248,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_표준화사망률_남자,5,0.248,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_사망률_여자,5,0.279,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,혈액및조혈기관질환과면역메커니즘을침범하는특정장애_표준화사망률_여자,5,0.279,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_사망률_전체",6,0.433,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_표준화사망률_전체",6,0.433,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_사망률_남자",6,0.43,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_표준화사망률_남자",6,0.43,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_사망률_여자",6,0.432,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"내분비,영양및대사질환_표준화사망률_여자",6,0.432,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_사망률_전체,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_표준화사망률_전체,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_사망률_남자,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_표준화사망률_남자,5,0.356,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_사망률_여자,5,0.348,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,만성하기도_표준화사망률_여자,5,0.348,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_사망률_전체,8,0.587,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_표준화사망률_전체,8,0.587,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_사망률_남자,8,0.587,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_표준화사망률_남자,8,0.587,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_사망률_여자,8,0.586,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,소화기계통의질환_표준화사망률_여자,8,0.586,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"임신,출산및산후기_사망률_여자",6,0.055,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"임신,출산및산후기_표준화사망률_여자",6,0.055,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_사망률_전체",6,0.263,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_표준화사망률_전체",5,0.217,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_사망률_남자",6,0.189,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_표준화사망률_남자",5,0.154,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_사망률_여자",6,0.182,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"선천기형,변형및염색체이상_표준화사망률_여자",5,0.154,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_사망률_전체",6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_표준화사망률_전체",5,0.357,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_사망률_남자",6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_표준화사망률_남자",5,0.357,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_사망률_여자",6,0.434,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,"달리분류되지않은증상,징후_표준화사망률_여자",5,0.357,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_사망률_전체,5,0.354,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_표준화사망률_전체,6,0.43,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_사망률_남자,6,0.422,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_표준화사망률_남자,6,0.422,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_사망률_여자,6,0.379,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,낙상(추락)_표준화사망률_여자,6,0.379,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_사망률_전체,5,0.234,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_표준화사망률_전체,6,0.281,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_사망률_남자,6,0.211,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_표준화사망률_남자,6,0.211,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_사망률_여자,6,0.196,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,가해(타살)_표준화사망률_여자,6,0.196,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,비브리오패혈증_발생률,5,0.073,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,치쿤구니야열_발생률,5,0.013,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저작불편호소율(65세이상)_조율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,저작불편호소율(65세이상)_표준화율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,운전행태_음주운전비율,5,0.358,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,보행행태_무단횡단비율,5,0.382,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,전문의_합계,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,의원_마취통증학과,5,0.316,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_분만실병실수,6,0.331,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일반건강검진_대상인원_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일반건강검진_수검인원_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일반건강검진_대상인원_남자,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일반건강검진_수검인원_남자,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일반건강검진_대상인원_여자,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,일반건강검진_수검인원_여자,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,정상B(경계),5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_일반검진_특이소견없음,5,0.333,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인지기능장애_일반검진_인지기능저하,5,0.333,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대장이중조영촬영또는대장내시경검사_대장암,5,0.368,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,대장이중조영촬영또는대장내시경검사_기타,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,자궁경부암결과_자궁경부암의심,5,0.25,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,시도내이동_시군구내이동,5,0.383,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+국민건강결과_최종.csv,시도내이동_시군구간전입,5,0.383,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+국민건강결과_최종.csv,시도내이동_시군구간전출,5,0.383,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+국민건강결과_최종.csv,1인가구수,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구수_20-44세,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구수_45-64세,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구수_65세이상,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구율_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구율_20-44세가구,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구율_45-64세가구,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,1인가구율_65세이상가구,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,기초연금수급자율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,국민기초생활보장수급자,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결혼이민자수_전체,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결혼이민자수_남자,6,0.455,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,결혼이민자수_여자,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_운전행태영역,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_교통안전영역,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,교통문화지수_보행행태영역,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,노후주택_전체주택,5,0.385,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,노후주택_단독주택,6,0.462,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,노후주택_아파트,6,0.434,EXCLUDE,,,,,housing sub-type: detached share retained,B
+국민건강결과_최종.csv,노후주택_연립주택,6,0.448,EXCLUDE,,,,,housing sub-type: detached share retained,B
+국민건강결과_최종.csv,노후주택_다세대주택,6,0.433,EXCLUDE,,,,,housing sub-type: detached share retained,B
+국민건강결과_최종.csv,노후주택_비거주용건물내주택,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구일인당공원면적,6,0.448,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,인구천명당담배소매업소수,8,0.6,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,어제점심식사후칫솔질실천율_조율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,어제점심식사후칫솔질실천율_표준화율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간미충족의료율(병의원)_조율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,연간미충족의료율(병의원)_표준화율,5,0.384,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,구강보건_잇솔질교습실적,8,0.058,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,거주지내통근취업자,8,0.416,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_분만실병상수,6,0.331,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_신생아실병실수,6,0.316,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_신생아실병상수,6,0.316,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_수술실병실수,6,0.439,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_수술실병상수,6,0.439,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_회복실병실수,6,0.441,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_회복실병상수,6,0.441,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_응급실병실수,6,0.445,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_응급실병상수,6,0.445,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_인공신장실병실수,6,0.387,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_인공신장실병상수,6,0.387,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_물리치료실병실수,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+국민건강결과_최종.csv,특수진료실_물리치료실병상수,6,0.461,EXCLUDE,,,,,outcome/utilisation,B
+독거노인가구비율_전처리.csv,독거노인가구비율(%),10,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+독거노인가구비율_전처리.csv,65세이상_1인가구(가구),10,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+독거노인가구비율_전처리.csv,전체_일반가구(가구),10,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+손씻기_전처리.csv,before_meal_handwash_rate_adj,7,0.987,EXCLUDE,,,,,crude (adjusted) duplicate: standardized retained,B
+손씻기_전처리.csv,before_meal_handwash_rate_std,7,0.987,INCLUDE,D4 hygiene-food,Handwashing before meals,-,% (age-std),food-handling hygiene [Tier B: time-invariant district mean],B
+손씻기_전처리.csv,after_toilet_handwash_rate_adj,7,0.987,EXCLUDE,,,,,crude (adjusted) duplicate: standardized retained,B
+손씻기_전처리.csv,after_toilet_handwash_rate_std,7,0.987,INCLUDE,D4 hygiene-food,Handwashing after toilet,-,% (age-std),fecal-oral barrier [Tier B: time-invariant district mean],B
+손씻기_전처리.csv,after_outing_handwash_rate_adj,7,0.988,EXCLUDE,,,,,crude (adjusted) duplicate: standardized retained,B
+손씻기_전처리.csv,after_outing_handwash_rate_std,7,0.988,INCLUDE,D4 hygiene-food,Handwashing after going out,-,% (age-std),hygiene [Tier B: time-invariant district mean],B
+손씻기_전처리.csv,비누_손_세정제_사용률_조율,7,0.988,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+손씻기_전처리.csv,비누_손_세정제_사용률_표준화율,7,0.988,INCLUDE,D4 hygiene-food,Soap/sanitizer use,-,% (age-std),the association under scrutiny; tested with and without urbanicity axis [Tier B],B
+양식데이터_연도별.csv,참다랑어_생산금액,9,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,참다랑어_생산량,8,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,참다랑어_입식량,5,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,참다랑어_현사육량,8,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,민어_생산량,9,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,민어_입식량,6,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,민어_현사육량,9,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,노래미류_먹이,6,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,부세_먹이,5,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,부세_입식량,5,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,송어류_먹이,13,0.002,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,송어류_생산금액,13,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,송어류_생산량,13,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,송어류_입식량,12,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,송어류_현사육량,11,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,연어_먹이,10,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,연어_생산금액,8,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,연어_생산량,8,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,연어_입식량,6,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,연어_현사육량,8,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,붕장어_먹이,7,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,붕장어_생산금액,6,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,붕장어_생산량,6,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,붕장어_입식량,6,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,붕장어_현사육량,5,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,전갱이류_생산금액,6,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,전갱이류_생산량,7,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,전갱이류_입식량,7,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,전갱이류_현사육량,7,0.0,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,참조기_생산금액,11,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+양식데이터_연도별.csv,참조기_생산량,11,0.001,EXCLUDE,,,,,marine: not an EHEC pathway,B
+외국인인구수_전처리.csv,value,10,0.999,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+재정자립도_전처리.csv,재정자립도(세입과목개편후),11,0.768,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+종합소득세.csv,신고인원,7,0.997,INCLUDE,D5 SES,Income-tax filers,±,denominator for income per filer,derive per-filer income [Tier B: time-invariant district mean],B
+종합소득세.csv,총수입금액,7,0.997,EXCLUDE,,,,,tax sub-series: aggregate income + filers retained,B
+종합소득세.csv,종합소득금액,7,0.997,INCLUDE,D5 SES,Aggregate taxable income,-,KRW per taxpayer (derive),"income level; derive per-filer; complements GRDP (supervisor hypothesis) with longer, fuller coverage [B]",B
+종합소득세.csv,과세표준,7,0.997,EXCLUDE,,,,,tax sub-series: aggregate income + filers retained,B
+종합소득세.csv,산출세액,7,0.997,EXCLUDE,,,,,tax sub-series: aggregate income + filers retained,B
+종합소득세.csv,세액공제 및 감면,7,0.997,EXCLUDE,,,,,tax sub-series: aggregate income + filers retained,B
+종합소득세.csv,결정세액,7,0.997,EXCLUDE,,,,,tax sub-series: aggregate income + filers retained,B
+지역축제_전처리.csv,위도,11,0.549,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+지역축제_전처리.csv,경도,11,0.549,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+지역축제_전처리.csv,원본_공연_객석수,11,0.435,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+지역축제_전처리.csv,원본_공연_관람요금,6,0.034,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+지역축제_전처리.csv,원본_공연_관람요금.1,6,0.034,EXCLUDE,,,,,geocode/admin/festival: no pathway,B
+추가_1인가구_전처리.csv,1인가구,10,1.0,EXCLUDE,D5 SES,Single-person households,±,% of households,duplicate of 'Single-person households' from another file; higher-coverage source retained,B
+추가_1인가구_전처리.csv,주택 이외의 거처_계,10,1.0,EXCLUDE,,,,,housing sub-type: detached share retained,B
+추가_1인가구_전처리.csv,주택_계,10,1.0,EXCLUDE,,,,,housing sub-type: detached share retained,B
+추가_1인가구_전처리.csv,주택_다세대주택,10,0.997,EXCLUDE,,,,,housing sub-type: detached share retained,B
+추가_1인가구_전처리.csv,주택_단독주택,10,1.0,EXCLUDE,D5 SES,Detached-house share,+,% of dwellings,duplicate of 'Detached-house share' from another file; higher-coverage source retained,B
+추가_1인가구_전처리.csv,주택_비주거용 건물 내 주택,10,0.997,EXCLUDE,,,,,housing sub-type: detached share retained,B
+추가_1인가구_전처리.csv,주택_아파트,10,0.998,EXCLUDE,,,,,housing sub-type: detached share retained,B
+추가_1인가구_전처리.csv,주택_연립주택,10,0.998,EXCLUDE,,,,,housing sub-type: detached share retained,B
+추가_고령인구_전처리.csv,1인가구_60~64세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+추가_고령인구_전처리.csv,1인가구_60세 이상 - 계,5,1.0,EXCLUDE,D5 SES,Older adults living alone,±,% of older pop,duplicate of 'Older adults living alone' from another file; higher-coverage source retained,B
+추가_고령인구_전처리.csv,1인가구_65~69세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+추가_고령인구_전처리.csv,1인가구_70~74세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+추가_고령인구_전처리.csv,1인가구_75~79세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+추가_고령인구_전처리.csv,1인가구_80~84세,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+추가_고령인구_전처리.csv,1인가구_85세이상,5,1.0,EXCLUDE,,,,,age sub-band of single households: 65+ retained,B
+추가_고령인구_전처리.csv,계_60~64세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_고령인구_전처리.csv,계_60세 이상 - 계,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_고령인구_전처리.csv,계_65~69세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_고령인구_전처리.csv,계_70~74세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_고령인구_전처리.csv,계_75~79세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_고령인구_전처리.csv,계_80~84세,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_고령인구_전처리.csv,계_85세이상,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_독거노인가구비율_전처리.csv,독거노인가구비율(%),10,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_독거노인가구비율_전처리.csv,65세이상_1인가구(가구),10,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+추가_독거노인가구비율_전처리.csv,전체_일반가구(가구),10,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+영유아인구_전처리.csv,영유아비율_0_4,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+영유아인구_전처리.csv,아동비율_5_9,5,1.0,EXCLUDE,,,,,Tier B default: <10 years and no pre-specified pathway role,B
+(external: KOSIS census 2015/2020),대졸자비율,2,0.0,PENDING,D5 SES,Tertiary-educated share,-,% of pop 25+,"SUPERVISOR-SPECIFIED. NOT in local data (only 고등학교졸업률 2017, 1 year). Requires KOSIS population-census education table, 2015 and 2020, si-gun-gu level; time-invariant",B
