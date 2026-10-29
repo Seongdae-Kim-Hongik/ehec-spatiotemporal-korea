@@ -1,0 +1,6 @@
+"model","cov","N","IRR","lo","hi","P_gt1","cred","DIC"
+"monitor_head_density","beef_head",2016,1.052,0.856,1.295,0.685,FALSE,5325.9
+"monitor_farms_plus_head","beef_cattle_farms",2016,1.27,0.992,1.628,0.971,FALSE,5330.1
+"monitor_farms_plus_head","beef_head",2016,0.846,0.623,1.149,0.141,FALSE,5330.1
+"monitor_farms_2019_2024","beef_cattle_farms",1282,1.203,0.985,1.473,0.965,FALSE,2860
+"monitor_farms_2011_2018","beef_cattle_farms",734,1.098,0.873,1.38,0.79,FALSE,2392.5

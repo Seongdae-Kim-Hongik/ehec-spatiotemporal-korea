@@ -1,0 +1,9 @@
+"model","cov","IRR","lo","hi","P_gt1","cred","DIC"
+"baseline_trend","beef_cattle_farms",1.149,0.973,1.358,0.949,FALSE,5324.9
+"baseline_trend","dairy_farms",0.991,0.874,1.125,0.444,FALSE,5324.9
+"census_timevarying","census_beef_tv",1.264,1.082,1.478,0.998,TRUE,5318.7
+"census_timevarying","census_dairy_tv",0.982,0.874,1.105,0.382,FALSE,5318.7
+"census_timeinvariant","census_beef_ti",1.262,1.077,1.478,0.998,TRUE,5318.2
+"census_timeinvariant","census_dairy_ti",0.978,0.869,1.1,0.352,FALSE,5318.2
+"census_yearwise_z","census_beef_yw",1.218,1.052,1.41,0.996,TRUE,5323.3
+"census_yearwise_z","census_dairy_yw",0.977,0.872,1.095,0.345,FALSE,5323.3

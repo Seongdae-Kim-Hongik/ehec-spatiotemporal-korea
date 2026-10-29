@@ -1,0 +1,86 @@
+﻿term,n_spec,n_cred,median_IRR,q25,q75,pct_above1,cred_pct,cred_dir_consistency,verdict,domain,hypothesis,observed_dir,dir_match
+beef_cattle_farms,638,635,1.3094000000000001,1.2818,1.336275,100.0,99.52978056426332,100.0,robust,D1 reservoir,+,+,✓
+household_waste_per_capita,190,156,0.8874,0.874225,0.9058,0.0,82.10526315789474,100.0,robust,D5 SES,+,-,✗ opposite
+hospital_beds_per_1000_pop,755,596,1.2164,1.19655,1.2419,100.0,78.94039735099338,100.0,robust,D7 detection,±,+,
+reservoir_pond_land_area,440,186,1.1212499999999999,1.1072,1.13705,100.0,42.27272727272727,100.0,suggestive,D2 agri-land,+,+,✓
+current_smoking,565,179,1.1004,1.0853,1.1161,100.0,31.68141592920354,100.0,suggestive,D6 behaviour,+,+,✓
+physicians_count,755,234,0.8036,0.7881,0.8204,0.0,30.99337748344371,100.0,suggestive,D7 detection,±,-,
+health_share_of_general_budget,232,64,1.09165,1.0833,1.1023,100.0,27.586206896551722,100.0,suggestive,D5 SES,-,+,✗ opposite
+fiscal_autonomy,224,57,0.8914,0.8793,0.905225,0.0,25.44642857142857,100.0,suggestive,D5 SES,-,-,✓
+fiscal_independence,197,49,0.8707,0.8462,0.8865,0.0,24.873096446700508,100.0,suggestive,D5 SES,-,-,✓
+beef_cattle_density,337,21,1.085,0.9987,1.1703,73.88724035608308,6.231454005934718,66.66666666666666,null,D1 reservoir,+,+,✓
+net_migration,177,11,1.0591,1.0538,1.065,100.0,6.214689265536723,100.0,null,D5 SES,±,+,
+rum_TMid,573,35,0.8335,0.79,0.8766,0.5235602094240838,6.108202443280978,100.0,null,D1 reservoir,+,-,✗ opposite
+in_district_outpatient_volume,755,39,0.863,0.8522,0.8773,0.0,5.1655629139072845,100.0,null,D7 detection,±,-,
+residential_building_site_area,473,21,1.1432,1.1086,1.1721,99.78858350951374,4.439746300211417,100.0,null,D2 agri-land,-,+,✗ opposite
+bars_pubs_per_1000_pop,485,19,0.9208,0.9014,0.9362,0.0,3.917525773195876,100.0,null,D4 hygiene-food,+,-,✗ opposite
+poultry_density,674,25,0.9064,0.87395,0.9399249999999999,2.967359050445104,3.7091988130563793,100.0,null,D1 reservoir,0,-,
+small_ruminant_density,642,22,0.93085,0.901975,0.9506,0.9345794392523363,3.4267912772585665,100.0,null,D1 reservoir,+,-,✗ opposite
+swine_density,668,18,0.94165,0.8950750000000001,0.9825250000000001,17.514970059880238,2.694610778443114,100.0,null,D1 reservoir,0,-,
+orchard_area,453,7,1.0938,1.0825,1.1071,100.0,1.545253863134658,100.0,null,D2 agri-land,+,+,✓
+population_density,227,3,1.1188,1.0558,1.1683,92.95154185022027,1.3215859030837005,100.0,null,D5 SES,±,+,
+isolation_beds,755,8,1.0797,1.0746,1.085,100.0,1.0596026490066226,100.0,null,D7 detection,±,+,
+kchs_pc1,1494,11,0.9353,0.888425,0.98385,18.67469879518072,0.7362784471218206,100.0,null,axis,±,-,
+aggregate_taxable_income,212,1,0.9239,0.89095,0.959225,11.79245283018868,0.4716981132075472,100.0,null,D5 SES,-,-,✓
+infectious_disease_outpatients,755,3,1.1379,1.1186,1.1524,100.0,0.3973509933774834,100.0,null,D7 detection,±,+,
+paddy_field_area,431,1,0.958,0.9183,0.9895499999999999,19.721577726218097,0.23201856148491878,100.0,null,D2 agri-land,±,-,
+upland_field_dry_field_area,451,1,1.0632,1.03185,1.0848499999999999,92.90465631929047,0.22172949002217296,100.0,null,D2 agri-land,+,+,✓
+obesity_self_reported,578,1,0.9139,0.9047,0.9239,0.0,0.17301038062283738,100.0,null,D6 behaviour,±,-,
+sex_ratio,3000,0,0.9581,0.9396,0.981625,13.633333333333333,0.0,,null,forced,±,-,
+general_hospitals,755,0,1.0421,1.03395,1.0509,100.0,0.0,,null,D7 detection,±,+,
+hospitals,755,0,1.0098,1.0027499999999998,1.0167,83.3112582781457,0.0,,null,D7 detection,±,+,
+internal_medicine_clinics,755,0,1.0748,1.0610499999999998,1.0896,100.0,0.0,,null,D7 detection,±,+,
+internal_medicine_specialists,755,0,1.0628,1.0423,1.0829,99.73509933774835,0.0,,null,D7 detection,±,+,
+preventive_medicine_specialists,755,0,0.9779,0.9727,0.9834,1.0596026490066226,0.0,,null,D7 detection,±,-,
+public_health_centers,755,0,1.0092,0.9958,1.0225499999999998,67.54966887417218,0.0,,null,D7 detection,±,+,
+pasture_land_area,665,0,1.003,0.9809,1.016,55.037593984962406,0.0,,null,D1 reservoir,+,+,✓
+dairy_farms,639,0,1.0195,1.0027499999999998,1.0353500000000002,78.40375586854461,0.0,,null,D1 reservoir,+,+,✓
+good_self_rated_health,596,0,1.0272000000000001,1.018675,1.03525,99.16107382550335,0.0,,null,D6 behaviour,±,+,
+rum_THigh,573,0,0.9525,0.8524,1.1156,41.361256544502616,0.0,,null,D1 reservoir,+,-,✗ opposite
+walking_practice,568,0,0.96035,0.954275,0.9672,0.0,0.0,,null,D6 behaviour,0,-,
+infant_check_up_rate,560,0,0.974,0.9604,0.99025,15.535714285714286,0.0,,null,D6 behaviour,±,-,
+monthly_drinking,546,0,1.0518,1.0434,1.0597,100.0,0.0,,null,D6 behaviour,+,+,✓
+public_health_center_use,545,0,0.9984,0.9903,1.0057,44.587155963302756,0.0,,null,D6 behaviour,±,-,
+influenza_vaccination_coverage,544,0,1.00345,0.9953,1.0133,62.5,0.0,,null,D6 behaviour,-,+,✗ opposite
+handwashing_after_going_out,499,0,1.0563,1.03335,1.0799500000000002,97.99599198396794,0.0,,null,D4 hygiene-food,-,+,✗ opposite
+forest_area,464,0,0.9698,0.9537,0.9876,13.36206896551724,0.0,,null,D2 agri-land,-,-,✓
+fish_farm_land_area,463,0,0.9697,0.95595,0.9849,11.879049676025918,0.0,,null,D2 agri-land,0,-,
+primary_school_enrollment,463,0,0.9968,0.9851,1.0089,44.06047516198704,0.0,,null,D4 hygiene-food,+,-,✗ opposite
+kindergarten_class_size,461,0,0.9784,0.9589,1.0019,27.331887201735356,0.0,,null,D4 hygiene-food,+,-,✗ opposite
+river_stream_land_area,461,0,0.99,0.9787,1.001,27.331887201735356,0.0,,null,D2 agri-land,+,-,✗ opposite
+fast_food_outlets_per_1000_pop,460,0,1.02075,1.00605,1.04215,83.47826086956522,0.0,,null,D4 hygiene-food,+,+,✓
+childcare_facilities_per_1000_infants,459,0,0.936,0.92955,0.9414,0.0,0.0,,null,D4 hygiene-food,+,-,✗ opposite
+irrigation_ditch_area,459,0,1.0521,1.023,1.0802,91.06753812636165,0.0,,null,D2 agri-land,+,+,✓
+factory_land_area,453,0,1.031,1.0105,1.0441,85.20971302428256,0.0,,null,D2 agri-land,0,+,
+nutrition_label_literacy,453,0,1.0557,1.0519,1.0608,100.0,0.0,,null,D4 hygiene-food,-,+,✗ opposite
+breakfast_eating_rate,450,0,1.1174499999999998,1.100825,1.133175,100.0,0.0,,null,D4 hygiene-food,±,+,
+handwashing_before_meals,444,0,0.98455,0.9674750000000001,0.9988250000000001,23.873873873873876,0.0,,null,D4 hygiene-food,-,-,✓
+kindergarten_enrollment,418,0,0.97805,0.9640249999999999,0.9918750000000001,16.028708133971293,0.0,,null,D4 hygiene-food,+,-,✗ opposite
+drinking_water_groundwater_use,344,0,0.9897,0.9610000000000001,1.0126499999999998,38.662790697674424,0.0,,null,D3 water-sanit,+,-,✗ opposite
+combined_sewer_repair_length,331,0,1.0427,1.02315,1.0597500000000002,94.25981873111783,0.0,,null,D3 water-sanit,±,+,
+sludge_recycled_land_application,331,0,1.0263,1.021,1.0327,99.69788519637463,0.0,,null,D3 water-sanit,+,+,✓
+groundwater_quality_pass_rate,329,0,0.9473,0.9444,0.95,0.0,0.0,,null,D3 water-sanit,-,-,✓
+total_living_use_groundwater_volume,325,0,1.041,1.0169,1.0653,91.07692307692308,0.0,,null,D3 water-sanit,+,+,✓
+night_soil_sludge_generation,323,0,1.0259,1.0117500000000001,1.0408499999999998,90.09287925696594,0.0,,null,D3 water-sanit,+,+,✓
+sewer_inspection_length,323,0,0.9722,0.9615,0.9793000000000001,0.0,0.0,,null,D3 water-sanit,-,-,✓
+mixed_agricultural_domestic_groundwater,322,0,1.0346,1.003,1.0656750000000001,77.63975155279503,0.0,,null,D3 water-sanit,+,+,✓
+public_sewage_treatment_coverage,317,0,1.0792,1.0609,1.1002,100.0,0.0,,null,D3 water-sanit,-,+,✗ opposite
+septic_tank_population,317,0,1.039,1.0035,1.0782,76.97160883280758,0.0,,null,D3 water-sanit,+,+,✓
+school_groundwater_use,309,0,1.0035,0.9881,1.0214,55.663430420711975,0.0,,null,D3 water-sanit,+,+,✓
+simple_waterworks_groundwater_use,307,0,0.9966,0.97285,1.0184,45.27687296416938,0.0,,null,D3 water-sanit,+,-,✗ opposite
+household_drinking_groundwater_use,301,0,1.0214,0.9926,1.0475,68.10631229235881,0.0,,null,D3 water-sanit,+,+,✓
+piped_water_supply_coverage,294,0,0.9275,0.90435,0.95445,3.741496598639456,0.0,,null,D3 water-sanit,-,-,✓
+private_academies_per_1000_pop,226,0,0.9904999999999999,0.9738249999999999,1.0107499999999998,36.72566371681416,0.0,,null,D5 SES,-,-,✓
+businesses_per_1000_pop,225,0,1.0599,1.0529,1.0698,100.0,0.0,,null,D5 SES,-,+,✗ opposite
+land_price_change,221,0,1.0636,1.0494,1.0793,100.0,0.0,,null,D5 SES,-,+,✗ opposite
+older_adult_share,213,0,1.0542,1.0072,1.0928,83.09859154929578,0.0,,null,D5 SES,±,+,
+urban_population_share,213,0,1.006,0.9725,1.0351,55.39906103286385,0.0,,null,D5 SES,±,+,
+basic_livelihood_recipient_rate,207,0,0.9992,0.98725,1.0151,48.792270531400966,0.0,,null,D5 SES,+,-,✗ opposite
+income_tax_filers,203,0,0.913,0.8808,0.9460500000000001,3.9408866995073892,0.0,,null,D5 SES,±,-,
+foreign_residents_per_1000_pop,200,0,0.97175,0.95885,0.98485,6.0,0.0,,null,D5 SES,±,-,
+grdp_per_capita,200,0,1.0056,0.99025,1.0212,56.99999999999999,0.0,,null,D5 SES,-,+,✗ opposite
+single_person_households,196,0,0.9601999999999999,0.9411750000000001,0.972275,3.571428571428571,0.0,,null,D5 SES,±,-,
+tertiary_institutions,189,0,1.0244,1.0119,1.0366,91.005291005291,0.0,,null,D5 SES,-,+,✗ opposite
+total_fertility_rate,187,0,1.1034,1.0884,1.1205,100.0,0.0,,null,D5 SES,+,+,✓
+households,181,0,1.0065,0.9928,1.0313,62.430939226519335,0.0,,null,D5 SES,±,+,
+home_ownership_rate,176,0,1.04,1.0253,1.054225,98.29545454545455,0.0,,null,D5 SES,-,+,✗ opposite

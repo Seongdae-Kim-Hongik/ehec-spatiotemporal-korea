@@ -1,0 +1,7 @@
+"model","structure","DIC","WAIC","dDIC"
+"M1","Covariates + iid area",5609.1,5646.4,288.3
+"M2","+ BYM2 spatial",5598.6,5649.1,277.8
+"M3","+ RW1 temporal (no spatial)",5767.9,5856.3,447.1
+"M4","BYM2 + iid time",5501.2,5562.4,180.4
+"M5","BYM2 + RW1",5495.9,5557.3,175.1
+"M6","BYM2 + RW1 + Type I interaction",5320.8,5285.1,0

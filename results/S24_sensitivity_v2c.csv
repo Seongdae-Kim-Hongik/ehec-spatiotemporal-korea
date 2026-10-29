@@ -1,0 +1,5 @@
+﻿Analysis,Beef-cattle farm density,Fiscal independence,Handwashing with soap,Reservoir and pond area,Current smoking,DIC,Credibly elevated districts
+Final model (main),1.264 (1.082-1.478)a,0.785 (0.657-0.939)a,1.463 (1.125-1.905)a,1.091 (0.974-1.223),1.074 (0.966-1.195),5319.4,24
+Excluding the survey PC1 (19 covariates),1.267 (1.085-1.479)a,0.786 (0.658-0.940)a,1.434 (1.150-1.791)a,1.092 (0.974-1.223),1.076 (0.968-1.196),5317.5,24
+Adding a Jeju-si/Seogwipo-si indicator,1.267 (1.084-1.481)a,0.779 (0.650-0.933)a,1.456 (1.119-1.897)a,1.096 (0.978-1.228),1.075 (0.967-1.196),5315.7,21
+Cheongju 2011-2013 entered as observed zeros,1.255 (1.074-1.467)a,0.785 (0.656-0.940)a,1.462 (1.123-1.905)a,1.092 (0.974-1.224),1.073 (0.965-1.194),5321.3,24

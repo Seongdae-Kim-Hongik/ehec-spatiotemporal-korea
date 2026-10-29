@@ -1,0 +1,4 @@
+"cov","IRR","lo","hi","cred"
+"swine_density",0.851,0.693,1.044,FALSE
+"poultry_density",0.824,0.671,1.011,FALSE
+"walking_practice",0.955,0.859,1.062,FALSE

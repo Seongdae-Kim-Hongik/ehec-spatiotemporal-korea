@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# 544 — 최종모형 기준 결정요인 창별 그림(eFigure). 4년창(542 산출) + 풀링(540). credible만, 빨강(+)/파랑(−).
+# 544 — 최종모형 기준 결정요인 창별 그림(eFigure). 코로나 정렬 3창 2011-15/16-19/20-24(542w 산출) + 풀링(540). credible만, 빨강(+)/파랑(−).
 import pandas as pd, numpy as np, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt, os
 R="results_ST"; S=pd.read_csv(f"{R}/MASTER_final_4yr_split.csv"); T=pd.read_csv(f"{R}/MASTER_final_table2.csv")
 F=pd.read_csv(f"{R}/MASTER_final_4yr_fitstat.csv")
 groups=[]
 for pe in F.period:
-    d=S[(S.period==pe)&(S.cred)]; groups.append((f"{pe} (N = {int(F[F.period==pe].N.iloc[0])})",d))
+    d=S[(S.period==pe)&(S.cred)]; groups.append((f"{pe} (N = {int(F[F.period==pe].N.iloc[0]):,})",d))
 d=T[T.cred]; groups.append((f"Pooled 2011-2024 (N = 2,016)",d))
 rows=[]; 
 for g,d in groups:

@@ -1,0 +1,21 @@
+"domain","cov","label","IRR","lo","hi","P_gt1","cred"
+"1. Ruminant reservoir","beef_cattle_farms","Beef-cattle farm density",1.264,1.082,1.478,0.998,TRUE
+"1. Ruminant reservoir","dairy_farms","Dairy farm density",0.983,0.874,1.105,0.382,FALSE
+"2. Agriculture and land use","reservoir_pond_land_area","Reservoir and pond area",1.091,0.974,1.223,0.934,FALSE
+"2. Agriculture and land use","upland_field_dry_field_area","Upland-field area",1.026,0.889,1.185,0.639,FALSE
+"2. Agriculture and land use","forest_area","Forest area",0.957,0.813,1.125,0.296,FALSE
+"3. Water and sanitation","piped_water_supply_coverage","Piped water supply coverage",0.957,0.783,1.169,0.331,FALSE
+"3. Water and sanitation","sewerage_coverage","Sewerage coverage",1.206,0.925,1.575,0.917,FALSE
+"3. Water and sanitation","septic_tank_population","Septic-tank population",1.058,0.822,1.365,0.669,FALSE
+"3. Water and sanitation","drinking_water_groundwater_use","Drinking-water groundwater use",1.019,0.864,1.202,0.588,FALSE
+"4. Hygiene, food, and child settings","fast_food_outlets_per_1000_pop","Fast-food and eating-out outlets",0.95,0.821,1.099,0.245,FALSE
+"4. Hygiene, food, and child settings","childcare_facilities_per_1000_infants","Childcare facilities",0.94,0.849,1.04,0.114,FALSE
+"4. Hygiene, food, and child settings","soap_sanitizer_use","Handwashing with soap",1.463,1.125,1.905,0.998,TRUE
+"5. Socioeconomic and demographic","fiscal_independence","Fiscal independence",0.785,0.657,0.939,0.004,TRUE
+"5. Socioeconomic and demographic","net_migration","Net migration",1.071,0.995,1.153,0.966,FALSE
+"5. Socioeconomic and demographic","older_adults_living_alone","Older adults living alone",0.985,0.744,1.305,0.458,FALSE
+"5. Socioeconomic and demographic","sex_ratio","Sex ratio",0.989,0.846,1.158,0.446,FALSE
+"6. Health behavior","current_smoking","Current smoking",1.074,0.966,1.195,0.907,FALSE
+"6. Health behavior","influenza_vaccination_coverage","Influenza vaccination coverage",1.005,0.891,1.132,0.529,FALSE
+"7. Context and ascertainment","kchs_pc1","KCHS survey composite (PC1)",1.058,0.706,1.585,0.607,FALSE
+"7. Context and ascertainment","physicians_per_1000_pop","Physicians per 1000 population",1.097,0.957,1.257,0.908,FALSE

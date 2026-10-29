@@ -2,16 +2,19 @@
 # -*- coding: utf-8 -*-
 # 545 — 농림어업총조사(2010·2015·2020) 시군구 한우·젖소 사육농가 → 229 프레임 패널.
 #  목적: 교수 규칙("2011년부터 있는 자료") 충족 검정용. 2011–2024 = 총조사 3시점 선형보간(2021+는 2020 유지).
-import pandas as pd, numpy as np, os, re
-C="data_cache"
+import pandas as pd, numpy as np, os, re, sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import v2_fixes as v2
+# ★2026-10-21 v2: 밀도 분모 = final.shp 기하 면적(코드 결합). 옛 판은 그때의 ST_prereg_panel area(연도별 하수도 면적 평균, 2017+ 이중 합산)를 써서
+#   548이 넣은 한육우·젖소 농가 밀도 × shp 면적이 정수(농가 수)가 아니었음. 출력 위치 = FBD_CACHE, 총조사 원자료는 data_cache에서 읽음.
+CIN="data_cache"; C=v2.cache_dir()
 SIDO={"11":"서울시","21":"부산시","22":"대구시","23":"인천시","24":"광주시","25":"대전시","26":"울산시","29":"세종시","31":"경기도","32":"강원도","33":"충청북도","34":"충청남도","35":"전라북도","36":"전라남도","37":"경상북도","38":"경상남도","39":"제주특별자치도"}
 ALIAS={"경상북도군위군":"대구시군위군","제주특별자치도서귀포시":"제주도서귀포시","제주특별자치도제주시":"제주도제주시","인천시미추홀구":"인천시남구","충청북도청원군":"충청북도청주시","충청남도연기군":"세종시세종시","세종시세종특별자치시":"세종시세종시","경상남도마산시":"경상남도창원시","경상남도진해시":"경상남도창원시","경기도여주군":"경기도여주시","충청남도당진군":"충청남도당진시","인천시남구":"인천시남구"}
 regs=sorted(pd.read_csv(os.path.join(C,"ST_prereg_panel.csv"),usecols=["region"]).region.unique())
-area=pd.read_csv(os.path.join(C,"ST_prereg_panel.csv"),usecols=["region","area"]).groupby("region")["area"].mean()
+area=v2.area_by_region(regs)   # ★2026-10-21 shp 면적
 CITY_GU=re.compile(r".+시(중구|동구|남구|서구|북구|.{1,3}구)$")  # 도 지역 시 산하 일반구 걸러내기용은 코드 계층으로 대체
 rows=[]
 for y in (2010,2015,2020):
-    d=pd.read_csv(os.path.join(C,f"census{y}_utf8.csv"),skiprows=1,dtype={"C행정구역별":str})
+    d=pd.read_csv(os.path.join(CIN,f"census{y}_utf8.csv"),skiprows=1,dtype={"C행정구역별":str})
     d["code"]=d["C행정구역별"].str.strip("'"); d["name"]=d["행정구역별"].str.strip()
     nat=pd.to_numeric(d.loc[d["code"]=="00","한우:농가 (가구)"],errors="coerce").iloc[0]
     d=d[~d["name"].isin(["동부","읍부","면부","전국"])]

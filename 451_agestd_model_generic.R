@@ -3,25 +3,25 @@
 args<-commandArgs(trailingOnly=TRUE); DZ<-args[1]; ENG<-args[2]
 GD<-file.path(Sys.getenv("EHEC_ROOT", unset="."),"G.Downloads")
 source(file.path(GD,"FBD_SpatioTemporal/_st_setup.R"))    # nb,g,regs,NR,coords,build_Z,RICH,pc,pcp,CF,KLAB
+source(file.path(Sys.getenv("EHEC_ROOT", unset="."),"_v2_common.R"))   # ★2026-10-21 v2: E·사례 코드 결합·게이트, 채움 금지, KDCA형 청주 2011-2013 마스킹(CJ_MASK=0이면 끔). 이전 판 .bak_pre_v2
 source(file.path(GD,"EHP_Spatio/fig_style.R"))            # PAL_DIV6,bin_div,DIV_LABS,guide_fill_box,north_ehp,scale_ehp,layer_sido,bin_pep,PAL_PEP5,theme_ehp_map,lvl_layer,ELAB
 suppressPackageStartupMessages({library(dplyr);library(sf);library(ggplot2);library(stringr)})
 set.seed(20260711)
 R<-file.path(ROOT,"results_ST");C<-CACHE;EH<-file.path(ROOT,ENG);dir.create(EH,showWarnings=FALSE)
 AGG<-if(requireNamespace("ragg",quietly=TRUE)) ragg::agg_png else NULL
 # ---- 공변량: RICH-연령구조+SES ----
-WATER_covs<-WATER
-base_cov<-if(!is.null(RICH[[DZ]])) RICH[[DZ]] else WATER_covs
-cov<-setdiff(base_cov,c("g_infant","g_elderly","g_solo_elder"))
-cov<-unique(c(cov,"g_fiscal","g_basiclivelihood"))
-lab<-function(cv) ifelse(cv%in%names(ELAB),ELAB[cv],ifelse(cv%in%names(KLAB),KLAB[cv],cv))
-Z<-build_Z(cov,2011,2024)
+MC<-v2_main_cov(DZ);cov<-MC$vars   # ★2026-10-21 v2b(이전 판 .bak_pre_v2b): 옛 RICH 공변량(ST_covariates_panel.rds, 결측 있어 v2에서 멈춤) 대신 v2 주모형 공변량(EHEC = 원고 20변수, 4개 질환 = 문헌 주모형 세트 + 강제통제)·v2 패널
+lab<-function(cv) ifelse(cv%in%names(MC$lab),MC$lab[cv],ifelse(cv%in%names(ELAB),ELAB[cv],ifelse(cv%in%names(KLAB),KLAB[cv],cv)))
+Z<-v2_build_Z_main(DZ,2011,2024,MC)
+KDCA_DZ<-!(DZ%in%c("노로바이러스","살모넬라","황색포도상구균","바실러스세레우스","클로스트리디움퍼프린젠스","장염비브리오","병원성대장균","캠필로박터제주니","원충"))   # ★v2b: 청주 마스킹은 KDCA형(질병청 교차표)만, 식약처형은 하지 않음
 # VIF
 Xv<-Z[,cov];vif<-sapply(cov,function(v){r2<-tryCatch(summary(lm(Xv[[v]]~.,data=Xv[,setdiff(cov,v)]))$r.squared,error=function(e)NA);1/(1-r2)})
 # ---- data ----
-case<-read.csv(file.path(C,paste0("ST_",ENG,"_agecase.csv")))%>%group_by(region,year)%>%summarise(cases=sum(cases),.groups="drop")
-Est<-read.csv(file.path(C,paste0("ST_",ENG,"_Estd.csv")));yy<-2011:2024
-d0<-expand.grid(region=regs,year=yy,stringsAsFactors=FALSE)%>%left_join(case,by=c("region","year"))%>%left_join(Est,by=c("region","year"))%>%left_join(Z,by=c("region","year"))
-d0$cases[is.na(d0$cases)]<-0;d0$E_std[is.na(d0$E_std)|d0$E_std<=0]<-min(d0$E_std[d0$E_std>0],na.rm=TRUE)
+case<-v2_cases_rc(paste0("ST_",ENG,"_agecase.csv"))
+Est<-v2_E_rc(if(ENG=="EHEC")"ST_Estd_panel.csv" else paste0("ST_",ENG,"_Estd.csv"))   # ★v2b: EHEC 기대건수 정본은 ST_Estd_panel.csv(ST_EHEC_Estd.csv 없음)
+Est<-Est[,c("region","year","E_std")];yy<-2011:2024
+d0<-expand.grid(region=regs,year=yy,stringsAsFactors=FALSE)%>%left_join(case,by=c("region","year"))%>%left_join(Est,by=c("region","year"))%>%left_join(v2_relabel(Z,"공변량",keep_code=FALSE),by=c("region","year"))
+d0<-v2_finish(d0,kdca=KDCA_DZ)
 d0$area<-match(d0$region,regs);d0$time<-match(d0$year,yy);d0$id<-1:nrow(d0)
 rhs<-paste(sprintf("`%s`",cov),collapse="+")
 fitm<-function(covs,cfg=FALSE){f<-as.formula(paste0("cases~",paste(sprintf("`%s`",covs),collapse="+"),"+f(area,model='bym2',graph=g,scale.model=TRUE,constr=TRUE,hyper=pc)+f(time,model='rw1',scale.model=TRUE,hyper=pcp)+f(id,model='iid',hyper=pcp)"))
@@ -37,7 +37,7 @@ pepdf<-data.frame(region=regs,pep=round(pep,4));write.csv(pepdf,file.path(R,past
 phi<-m$summary.hyperpar["Phi for area","mean"];dic<-m$dic$dic;waic<-m$waic$waic
 # children 민감도
 CH<-read.csv(file.path(C,"ST_children_pct.csv"))
-d0<-d0%>%left_join(CH[,c("region","year","children_0_4")],by=c("region","year"));d0$children<-as.numeric(scale(d0$children_0_4));d0$children[!is.finite(d0$children)]<-0
+d0<-d0%>%left_join(v2_relabel(CH[CH$year%in%yy,c("region","year","children_0_4")],"ST_children_pct",keep_code=FALSE),by=c("region","year"));d0$children<-as.numeric(scale(v2_nofill(d0$children_0_4,"children_0_4")))   # ★v2b: 코드 결합·채움 없음(옛 판은 이름 결합 뒤 결측을 0으로)
 ms<-fitm(c(cov,"children"));fs<-ms$summary.fixed["children",]
 sens<-data.frame(IRR=round(exp(fs$mean),3),lo=round(exp(fs$`0.025quant`),3),hi=round(exp(fs$`0.975quant`),3),credible=(fs$`0.025quant`>0|fs$`0.975quant`<0))
 write.csv(sens,file.path(R,paste0("MASTER_agestd_",ENG,"_sens.csv")),row.names=FALSE)
@@ -56,7 +56,7 @@ ehsum<-data.frame(cat=names(table(cats)),n=as.integer(table(cats)));write.csv(eh
 # ---- 5년 구간 ----
 PER<-list("2011-2015"=2011:2015,"2016-2020"=2016:2020,"2021-2024"=2021:2024);pr<-list()
 for(pn in names(PER)){ys<-PER[[pn]];gg<-grid[grid$year%in%ys,]%>%group_by(region)%>%summarise(cases=sum(cases),E_std=sum(E_std),.groups="drop")
-  Zw<-build_Z(cov,min(ys),max(ys))%>%group_by(region)%>%summarise(across(all_of(cov),mean),.groups="drop");d<-gg%>%left_join(Zw,by="region");d$area<-match(d$region,regs)
+  Zw<-v2_build_Z_main(DZ,min(ys),max(ys),MC)%>%group_by(region)%>%summarise(across(all_of(cov),mean),.groups="drop");d<-gg%>%left_join(Zw,by="region");d$area<-match(d$region,regs)
   fp<-as.formula(paste0("cases~",rhs,"+f(area,model='bym2',graph=g,scale.model=TRUE,constr=TRUE,hyper=pc)"))
   mp<-tryCatch(inla(fp,family="nbinomial",data=d,E=d$E_std,control.fixed=CF,control.compute=list(dic=TRUE),control.inla=list(control.vb=list(emergency=50))),error=function(e)NULL)
   if(!is.null(mp)){f2<-mp$summary.fixed[cov,,drop=FALSE];pr[[pn]]<-data.frame(period=pn,cov=cov,label=lab(cov),IRR=round(exp(f2$mean),3),lo=round(exp(f2$`0.025quant`),3),hi=round(exp(f2$`0.975quant`),3),credible=(f2$`0.025quant`>0|f2$`0.975quant`<0))}}
@@ -69,8 +69,8 @@ enm<-endz(DZ)
 # A) SIR
 D<-rr;D$cls<-factor(bin_div(D$RR),levels=DIV_LABS);sp<-left_join(shp[,c("region","geometry")],D,by="region")
 gA<-ggplot(sp)+geom_sf(aes(fill=cls),color="grey78",linewidth=0.03)+lvl_layer(sp,DIV_LABS)+lay+
-  scale_fill_manual(values=setNames(PAL_DIV6,DIV_LABS),name="Age-standardised\nspatial RR",na.value="grey90",drop=FALSE)+
-  north_ehp("tr")+scale_ehp("bl")+labs(title=paste0(enm," age-standardised spatial relative risk"),subtitle="Indirect standardisation (E_std offset). Colour = posterior RR; deep red = highest. Korea 2000/UTM-K.")+
+  scale_fill_manual(values=setNames(PAL_DIV6,DIV_LABS),name="Age-standardized\nspatial RR",na.value="grey90",drop=FALSE)+
+  north_ehp("tr")+scale_ehp("bl")+labs(title=paste0(enm," age-standardized spatial relative risk"),subtitle="Indirect standardization (E_std offset). Colour = posterior RR; deep red = highest. Korea 2000/UTM-K.")+
   theme_ehp_map(11)+guide_fill_box(rev=TRUE)+theme(text=element_text(family="Helvetica"),legend.position="right")
 ggsave(file.path(EH,paste0(ENG,"_Fig2_agestd_SIR.png")),gA,width=8.4,height=9.2,dpi=300,bg="white",device=AGG)
 # B) EHSA
@@ -79,7 +79,7 @@ pal<-c("New hot"="#B10026","Intensifying hot"="#E31A1C","Persistent hot"="#FC4E2
 spE<-left_join(shp[,c("region","geometry")],data.frame(region=regs,cls=factor(cats,levels=lev)),by="region")
 gB<-ggplot(spE)+geom_sf(aes(fill=cls),color="grey78",linewidth=0.03)+lvl_layer(spE,lev)+lay+
   scale_fill_manual(values=pal[lev],breaks=lev,limits=lev,na.value="grey92",name="EHSA class",drop=FALSE)+
-  north_ehp("tr")+scale_ehp("bl")+labs(title=paste0(enm," emerging hot spot analysis — age-standardised SIR (2011–2024)"),subtitle="Getis-Ord Gi* (EB-smoothed annual SIR) + Mann-Kendall. Korea 2000/UTM-K.")+
+  north_ehp("tr")+scale_ehp("bl")+labs(title=paste0(enm," emerging hot spot analysis — age-standardized SIR (2011–2024)"),subtitle="Getis-Ord Gi* (EB-smoothed annual SIR) + Mann-Kendall. Korea 2000/UTM-K.")+
   theme_ehp_map(11)+guide_fill_box()+theme(text=element_text(family="Helvetica"),legend.position="right")
 ggsave(file.path(EH,paste0(ENG,"_Fig3_agestd_EHSA.png")),gB,width=8.4,height=9.2,dpi=300,bg="white",device=AGG)
 # C) 초과확률
@@ -87,7 +87,7 @@ spX<-left_join(shp[,c("region","geometry")],pepdf,by="region");spX$cls<-bin_pep(
 PLV<-c("<0.05 (cold)","0.05–0.5","0.5–0.8","0.8–0.95","≥0.95 (hot)")
 gC<-ggplot(spX)+geom_sf(aes(fill=cls),color="grey78",linewidth=0.03)+lvl_layer(spX,PLV)+lay+
   scale_fill_manual(values=setNames(PAL_PEP5,PLV),breaks=PLV,limits=PLV,na.value="grey90",name="P(spatial RR > 1)",drop=FALSE)+
-  north_ehp("tr")+scale_ehp("bl")+labs(title=paste0(enm," posterior exceedance probability P(spatial RR > 1)"),subtitle="Age-standardised BYM2 structured spatial effect. >=0.95 credible high-risk; <0.05 credible low-risk. Korea 2000/UTM-K.")+
+  north_ehp("tr")+scale_ehp("bl")+labs(title=paste0(enm," posterior exceedance probability P(spatial RR > 1)"),subtitle="Age-standardized BYM2 structured spatial effect. >=0.95 credible high-risk; <0.05 credible low-risk. Korea 2000/UTM-K.")+
   theme_ehp_map(11)+guide_fill_box(rev=TRUE)+theme(text=element_text(family="Helvetica"),legend.position="right")
 ggsave(file.path(EH,paste0(ENG,"_Fig_agestd_exceedance.png")),gC,width=8.4,height=9.2,dpi=300,bg="white",device=AGG)
 # fit 요약

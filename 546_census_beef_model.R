@@ -1,15 +1,16 @@
 # 546 — 교수 규칙 검정 (type I 상호작용 = f(id, iid) 시공간 셀 무작위효과): 한우·젖소 농가밀도를 농림어업총조사(2010/2015/2020, 2011+ 커버)로 교체한 최종 20변수 모형.
 #  (A) 시변 버전(보간 패널) (B) 시간불변 버전(3시점 평균). 나머지 18변수·구조·프라이어는 540과 동일.
 suppressPackageStartupMessages({library(dplyr);library(sf);library(spdep);library(stringr);library(INLA);library(e1071)})
-set.seed(20260822); inla.setOption(num.threads="6:1")
-BASE<-file.path(Sys.getenv("EHEC_DATA",unset="data"),"FBD_DATA_ZIP")
-ROOT<-Sys.getenv("EHEC_ROOT",unset=".");CACHE<-file.path(ROOT,"data_cache");RS<-file.path(ROOT,"results_ST")
+set.seed(20260822); inla.setOption(num.threads=Sys.getenv("INLA_THREADS","2:1"))
+BASE<-file.path(Sys.getenv("EHEC_DATA", unset="data"),"FBD_DATA_ZIP")
+ROOT<-Sys.getenv("EHEC_ROOT", unset=".");CACHE<-file.path(ROOT,"data_cache");RS<-file.path(ROOT,"results_ST")
+V2_CACHE<-CACHE;source(file.path(Sys.getenv("EHEC_ROOT", unset="."),"_v2_common.R"))   # ★2026-10-21 v2: E·사례 코드 결합·게이트, 채움 금지, KDCA형 청주 2011-2013 마스킹(CJ_MASK=0이면 끔). 이전 판 .bak_pre_v2
 cont<-c("beef_cattle_farms","dairy_farms","reservoir_pond_land_area","upland_field_dry_field_area","forest_area","piped_water_supply_coverage","sewerage_coverage","septic_tank_population","drinking_water_groundwater_use","fast_food_outlets_per_1000_pop","childcare_facilities_per_1000_infants","soap_sanitizer_use","fiscal_independence","net_migration","older_adults_living_alone","sex_ratio","current_smoking","influenza_vaccination_coverage","kchs_pc1","physicians_per_1000_pop")
 d0<-read.csv(file.path(CACHE,"ST_prereg_panel.csv"),fileEncoding="UTF-8-BOM");d0$region<-str_replace_all(d0$region,"\\s+","")
 cz<-read.csv(file.path(CACHE,"ST_census_livestock.csv"),fileEncoding="UTF-8-BOM");cz$region<-str_replace_all(cz$region,"\\s+","")
 d0<-d0%>%left_join(cz,by=c("region","year"))
 skewf<-function(x){x<-x[is.finite(x)];if(length(x)<3||sd(x)==0)return(0);e1071::skewness(x)}
-zs<-function(x){x[is.na(x)]<-mean(x,na.rm=TRUE);xv<-if(min(x,na.rm=TRUE)>=0&&skewf(x)>1)log1p(pmax(x,0))else x;z<-scale(xv)[,1];z[!is.finite(z)]<-0;z}
+zs<-function(x){x<-v2_nofill(x,deparse(substitute(x)));xv<-if(min(x,na.rm=TRUE)>=0&&skewf(x)>1)log1p(pmax(x,0))else x;z<-scale(xv)[,1];z[!is.finite(z)]<-0;z}
 # 548 패치 이후 패널의 beef/dairy는 이미 총조사 값 → baseline(모니터링)은 보존 컬럼 사용
 if("beef_cattle_farms_trend2019" %in% names(d0)){d0$beef_cattle_farms<-d0$beef_cattle_farms_trend2019;d0$dairy_farms<-d0$dairy_farms_trend2019}
 Z<-d0[,c("region","year")];for(v in cont)Z[[v]]<-zs(d0[[v]])
@@ -25,10 +26,10 @@ coords<-suppressWarnings(st_coordinates(st_centroid(st_geometry(shp))));regs<-sh
 nb<-poly2nb(shp,queen=TRUE,snap=0.01);k3<-knn2nb(knearneigh(coords,k=3));for(i in which(card(nb)==0))for(j in k3[[i]]){nb[[i]]<-as.integer(unique(c(setdiff(nb[[i]],0L),j)));nb[[j]]<-as.integer(sort(unique(c(setdiff(nb[[j]],0L),i))))}
 cc<-n.comp.nb(nb);while(cc$nc>1){m<-as.integer(names(which.max(table(cc$comp.id))));mn<-which(cc$comp.id==m);ot<-which(cc$comp.id!=m);D<-as.matrix(dist(coords));D[ot,ot]<-Inf;D[mn,mn]<-Inf;ix<-which(D[ot,mn,drop=FALSE]==min(D[ot,mn]),arr.ind=TRUE)[1,];a<-ot[ix[1]];b<-mn[ix[2]];nb[[a]]<-as.integer(sort(unique(c(setdiff(nb[[a]],0L),b))));nb[[b]]<-as.integer(sort(unique(c(setdiff(nb[[b]],0L),a))));cc<-n.comp.nb(nb)};nb<-make.sym.nb(nb);g<-tempfile(fileext=".graph");nb2INLA(g,nb)
 pc<-list(prec=list(prior="pc.prec",param=c(0.5,0.01)),phi=list(prior="pc",param=c(0.5,2/3)));pcp<-list(prec=list(prior="pc.prec",param=c(0.5,0.01)));CF<-list(mean=0,prec=4,mean.intercept=0,prec.intercept=0.001)
-case<-read.csv(file.path(CACHE,"ST_EHEC_agecase.csv"))%>%group_by(region,year)%>%summarise(cases=sum(cases),.groups="drop");Est<-read.csv(file.path(CACHE,"ST_Estd_panel.csv"));yy<-2011:2024
-DD<-expand.grid(region=regs,year=yy,stringsAsFactors=FALSE)%>%left_join(case,by=c("region","year"))%>%left_join(Est,by=c("region","year"))%>%left_join(Z,by=c("region","year"))
+case<-v2_cases_rc("ST_EHEC_agecase.csv");Est<-v2_E_rc("ST_Estd_panel.csv")[,c("region","year","E_std")];yy<-2011:2024
+DD<-expand.grid(region=regs,year=yy,stringsAsFactors=FALSE)%>%left_join(case,by=c("region","year"))%>%left_join(Est,by=c("region","year"))%>%left_join(v2_relabel(Z,"공변량",keep_code=FALSE),by=c("region","year"))
 stopifnot(!anyNA(DD$census_beef_tv),!any(duplicated(paste(DD$region,DD$year))))
-DD$cases[is.na(DD$cases)]<-0;DD$E_std[is.na(DD$E_std)|DD$E_std<=0]<-min(DD$E_std[DD$E_std>0],na.rm=TRUE);DD$area<-match(DD$region,regs);DD$time<-match(DD$year,yy);DD$id<-1:nrow(DD)
+DD<-v2_finish(DD,kdca=TRUE);DD$area<-match(DD$region,regs);DD$time<-match(DD$year,yy);DD$id<-1:nrow(DD)
 fitmod<-function(cv){form<-as.formula(paste0("cases~",paste(sprintf("`%s`",cv),collapse="+"),"+f(area,model='bym2',graph=g,scale.model=TRUE,constr=TRUE,hyper=pc)+f(time,model='rw1',scale.model=TRUE,hyper=pcp)+f(id,model='iid',hyper=pcp)"))
   inla(form,family="nbinomial",data=DD,E=DD$E_std,control.fixed=CF,control.compute=list(dic=TRUE,waic=TRUE),control.inla=list(control.vb=list(emergency=50)))}
 rest<-setdiff(cont,c("beef_cattle_farms","dairy_farms"))

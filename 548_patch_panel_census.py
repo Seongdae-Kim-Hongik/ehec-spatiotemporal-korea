@@ -3,7 +3,8 @@
 # 548 — 본모형 교체: ST_prereg_panel의 beef_cattle_farms·dairy_farms를 농림어업총조사 시변 밀도(호/km²)로 교체.
 #  (교수 규칙 '2011년부터 있는 자료' 충족. 구 가축동향 값은 *_trend2019 컬럼으로 보존 → 민감도용.)
 import pandas as pd, os, shutil
-C="data_cache"; P=os.path.join(C,"ST_prereg_panel.csv")
+# (2026-10-21) 출력 위치 = FBD_CACHE(기본 data_cache; 검증용)
+C=os.environ.get("FBD_CACHE","data_cache"); P=os.path.join(C,"ST_prereg_panel.csv")
 bak=os.path.join(C,"ST_prereg_panel_bak_trendcattle.csv")
 if not os.path.exists(bak): shutil.copy(P,bak); print("백업:",bak)
 d=pd.read_csv(P); cz=pd.read_csv(os.path.join(C,"ST_census_livestock.csv"))

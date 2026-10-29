@@ -1,0 +1,61 @@
+"cov","label","IRR","lo","hi","cred","period","N"
+"beef_cattle_farms","Beef-cattle farm density",1.303,0.99,1.714,FALSE,"2011-2015",371
+"dairy_farms","Dairy farm density",1.057,0.867,1.291,FALSE,"2011-2015",371
+"reservoir_pond_land_area","Reservoir and pond area",0.835,0.644,1.082,FALSE,"2011-2015",371
+"upland_field_dry_field_area","Upland-field area",0.972,0.74,1.278,FALSE,"2011-2015",371
+"forest_area","Forest area",1.001,0.727,1.379,FALSE,"2011-2015",371
+"piped_water_supply_coverage","Piped water supply coverage",1.121,0.778,1.615,FALSE,"2011-2015",371
+"sewerage_coverage","Sewerage coverage",0.981,0.608,1.585,FALSE,"2011-2015",371
+"septic_tank_population","Septic-tank population",1.08,0.662,1.768,FALSE,"2011-2015",371
+"drinking_water_groundwater_use","Drinking-water groundwater use",1.177,0.846,1.637,FALSE,"2011-2015",371
+"fast_food_outlets_per_1000_pop","Fast-food and eating-out outlets",0.892,0.651,1.225,FALSE,"2011-2015",371
+"childcare_facilities_per_1000_infants","Childcare facilities",0.685,0.549,0.853,TRUE,"2011-2015",371
+"soap_sanitizer_use","Handwashing with soap",1.854,1.15,3,TRUE,"2011-2015",371
+"fiscal_independence","Fiscal independence",0.673,0.467,0.976,TRUE,"2011-2015",371
+"net_migration","Net migration",1.017,0.861,1.202,FALSE,"2011-2015",371
+"older_adults_living_alone","Older adults living alone",0.647,0.381,1.101,FALSE,"2011-2015",371
+"sex_ratio","Sex ratio",1.024,0.713,1.47,FALSE,"2011-2015",371
+"current_smoking","Current smoking",1.119,0.881,1.424,FALSE,"2011-2015",371
+"influenza_vaccination_coverage","Influenza vaccination coverage",0.795,0.576,1.097,FALSE,"2011-2015",371
+"kchs_pc1","KCHS survey composite (PC1)",1.053,0.548,2.016,FALSE,"2011-2015",371
+"physicians_per_1000_pop","Physicians per 1000 population",1.005,0.761,1.328,FALSE,"2011-2015",371
+"beef_cattle_farms","Beef-cattle farm density",1.107,0.882,1.39,FALSE,"2016-2019",509
+"dairy_farms","Dairy farm density",1.012,0.872,1.175,FALSE,"2016-2019",509
+"reservoir_pond_land_area","Reservoir and pond area",1.249,1.083,1.441,TRUE,"2016-2019",509
+"upland_field_dry_field_area","Upland-field area",1.16,0.973,1.379,FALSE,"2016-2019",509
+"forest_area","Forest area",1.031,0.839,1.265,FALSE,"2016-2019",509
+"piped_water_supply_coverage","Piped water supply coverage",0.972,0.699,1.352,FALSE,"2016-2019",509
+"sewerage_coverage","Sewerage coverage",1.257,0.815,1.936,FALSE,"2016-2019",509
+"septic_tank_population","Septic-tank population",0.845,0.594,1.201,FALSE,"2016-2019",509
+"drinking_water_groundwater_use","Drinking-water groundwater use",0.874,0.718,1.066,FALSE,"2016-2019",509
+"fast_food_outlets_per_1000_pop","Fast-food and eating-out outlets",1.021,0.832,1.253,FALSE,"2016-2019",509
+"childcare_facilities_per_1000_infants","Childcare facilities",1.105,0.926,1.322,FALSE,"2016-2019",509
+"soap_sanitizer_use","Handwashing with soap",1.223,0.878,1.704,FALSE,"2016-2019",509
+"fiscal_independence","Fiscal independence",0.833,0.653,1.067,FALSE,"2016-2019",509
+"net_migration","Net migration",1.144,1.019,1.284,TRUE,"2016-2019",509
+"older_adults_living_alone","Older adults living alone",1.125,0.76,1.671,FALSE,"2016-2019",509
+"sex_ratio","Sex ratio",0.871,0.689,1.098,FALSE,"2016-2019",509
+"current_smoking","Current smoking",0.897,0.763,1.053,FALSE,"2016-2019",509
+"influenza_vaccination_coverage","Influenza vaccination coverage",1.113,0.922,1.342,FALSE,"2016-2019",509
+"kchs_pc1","KCHS survey composite (PC1)",1.272,0.766,2.106,FALSE,"2016-2019",509
+"physicians_per_1000_pop","Physicians per 1000 population",1.138,0.949,1.365,FALSE,"2016-2019",509
+"beef_cattle_farms","Beef-cattle farm density",1.414,1.106,1.811,TRUE,"2020-2024",1136
+"dairy_farms","Dairy farm density",0.926,0.767,1.12,FALSE,"2020-2024",1136
+"reservoir_pond_land_area","Reservoir and pond area",1.106,0.945,1.294,FALSE,"2020-2024",1136
+"upland_field_dry_field_area","Upland-field area",0.937,0.764,1.145,FALSE,"2020-2024",1136
+"forest_area","Forest area",0.936,0.753,1.163,FALSE,"2020-2024",1136
+"piped_water_supply_coverage","Piped water supply coverage",0.849,0.619,1.163,FALSE,"2020-2024",1136
+"sewerage_coverage","Sewerage coverage",1.256,0.83,1.905,FALSE,"2020-2024",1136
+"septic_tank_population","Septic-tank population",1.158,0.827,1.626,FALSE,"2020-2024",1136
+"drinking_water_groundwater_use","Drinking-water groundwater use",0.981,0.786,1.226,FALSE,"2020-2024",1136
+"fast_food_outlets_per_1000_pop","Fast-food and eating-out outlets",0.909,0.745,1.106,FALSE,"2020-2024",1136
+"childcare_facilities_per_1000_infants","Childcare facilities",1.096,0.915,1.313,FALSE,"2020-2024",1136
+"soap_sanitizer_use","Handwashing with soap",1.243,0.88,1.762,FALSE,"2020-2024",1136
+"fiscal_independence","Fiscal independence",0.815,0.635,1.048,FALSE,"2020-2024",1136
+"net_migration","Net migration",1.106,0.977,1.251,FALSE,"2020-2024",1136
+"older_adults_living_alone","Older adults living alone",0.808,0.55,1.186,FALSE,"2020-2024",1136
+"sex_ratio","Sex ratio",0.947,0.755,1.187,FALSE,"2020-2024",1136
+"current_smoking","Current smoking",1.209,1.04,1.406,TRUE,"2020-2024",1136
+"influenza_vaccination_coverage","Influenza vaccination coverage",0.976,0.843,1.13,FALSE,"2020-2024",1136
+"kchs_pc1","KCHS survey composite (PC1)",1.033,0.618,1.726,FALSE,"2020-2024",1136
+"physicians_per_1000_pop","Physicians per 1000 population",1.135,0.934,1.381,FALSE,"2020-2024",1136

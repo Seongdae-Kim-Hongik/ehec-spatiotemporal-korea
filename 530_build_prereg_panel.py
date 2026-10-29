@@ -1,10 +1,17 @@
 # -*- coding: utf-8 -*-
 # 530 — 사전지정 풀(108) → 분석 패널 조립 + Z1–Z5 게이트. 모형 진입 전 단계. 어떤 IRR도 계산하지 않는다.
-#  규칙: (1) 0은 미측정으로 취급(NA) (2) 실측 연도의 구별 평균 = 시간불변 값 (3) 분모(인구·면적)는 하수도보급률 파일의 총인구·총면적
+#  규칙: (1) 0은 미측정으로 취급(NA) (2) 실측 연도의 구별 평균 = 시간불변 값 (3) 분모: pop=ST_agepop 합, area=지역 중앙값(2026-09-03 정정; 구 하수도 파일 분모는 이중계상)
 #        (4) 같은 지표가 여러 컬럼에 흩어진 경우 연도별 coalesce (5) 게이트 실패 변수는 패널에서 제외하고 사유 기록
-import pandas as pd, numpy as np, os, re, unicodedata as ud, warnings; warnings.filterwarnings("ignore")
-RAW=os.path.join(os.environ.get("EHEC_DATA","data"),"FBD_DATA_ZIP","merged")
-C="data_cache"; P=pd.read_csv(os.path.join(C,"COVARIATE_PREREG_POOL.csv")); I=P[P.status=="INCLUDE"].copy()
+# ★2026-10-21 v2 정본화(이전 판 530_build_prereg_panel.py.bak_pre_v2): (1) area = final.shp 기하 면적(코드 결합) — 하수도 파일 총면적 중앙값은 2017+ 소계 이중 합산으로 부풀었음
+#   (2) pop = FBD_CACHE/ST_agepop.csv(400 v2, 코드 결합, 빈칸 없음 단언 — 옛 보간·중앙값 채움 삭제; 옛 판은 군위 2011-22를 전국 중앙값 인구로 채웠음)
+#   (3) 끝에서 545(총조사 농가 밀도, shp 면적) → 548 → 531(kchs_pc1, 설계 파일은 WRITE_DESIGN=1일 때만) → 530b(v2 교정: 세종·제주·비누·정화조 구조적 0·kchs_pc1 v2)를 같은 FBD_CACHE로 이어 실행.
+#   원자료 시군구 결합(이름)은 옛 판 그대로 두고(세종 등 빠진 칸은 530b가 코드 결합으로 명시 채움·기록), 출력 위치 = 환경변수 FBD_CACHE(기본 data_cache).
+import pandas as pd, numpy as np, os, re, sys, unicodedata as ud, warnings; warnings.filterwarnings("ignore")
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); import v2_fixes as v2
+import jkms_yeargate_v2d as yg   # ★2026-10-22 v2d: 563 year_anomaly_gate와 같은 연도 이상 게이트(+원자료 재확인), _v2_promote_261021/19_JKMS패널결함.md
+import jkms_rawfix_v2c as jr   # ★2026-10-22 v2c: 주택소유율 2022 척도·격리병상 미발표 연도 교정(_v2_promote_261021/19_JKMS패널결함.md)
+RAW=os.path.join(os.environ.get("EHEC_DATA","data"),"FBD_DATA_ZIP")
+CIN="data_cache"; C=v2.cache_dir(); P=pd.read_csv(os.path.join(CIN,"COVARIATE_PREREG_POOL.csv")); I=P[P.status=="INCLUDE"].copy()
 nfc=lambda s: ud.normalize("NFC",str(s))
 def rd(f):
     p=os.path.join(RAW,f)
@@ -19,17 +26,21 @@ def rd(f):
     if isinstance(d["region"],pd.DataFrame): d["region"]=d["region"].iloc[:,0]
     d["year"]=pd.to_numeric(d["year"],errors="coerce"); d["region"]=d["region"].astype(str).str.replace(r"\s+","",regex=True).map(nfc)
     d["region"]=d.region.replace("인천시미추홀구","인천시남구")
+    if f.startswith("국민건강결과"): d=jr.fix_frame(d,tag="530 "+f)   # ★v2c
     return d[d.year.between(2011,2024)]
-REG=pd.read_csv(os.path.join(C,"ST_curated46_panel.csv"))[["region","year"]]
+REG=pd.read_csv(os.path.join(CIN,"ST_curated46_panel.csv"))[["region","year"]]
 REG["region"]=REG.region.astype(str).str.replace(r"\s+","",regex=True).map(nfc).replace("인천시미추홀구","인천시남구")
 regs=sorted(REG.region.unique()); yrs=list(range(2011,2025)); G=pd.MultiIndex.from_product([regs,yrs],names=["region","year"]).to_frame(index=False)
 # 분모
-sw=rd("merged_하수도보급률.csv"); den=sw.groupby(["region","year"]).agg(pop=("총인구(명)",lambda x: pd.to_numeric(x,errors="coerce").mean()),area=("총면적(㎢)",lambda x: pd.to_numeric(x,errors="coerce").mean())).reset_index()
-G=G.merge(den,on=["region","year"],how="left")
+# ★ 2026-09-03 분모 정정(Z10): merged_하수도보급률 '총인구(명)'·'총면적(㎢)'은 2017+ '소계' 이중계상(전국 82M, 지역별 ×2.0; 2010/11/14/16 일부 지역도 중복) → 사용 금지.
+#   pop = ST_agepop(연령별 인구 합; 연령표준화 E_std와 동일 분모) · area = 하수도 파일 총면적의 지역별 중앙값(연도불변)
+ap=pd.read_csv(os.path.join(C,"ST_agepop.csv"),dtype={"sigungu_cd":str}); assert "sigungu_cd" in ap.columns, "ST_agepop.csv가 v2가 아님 — 400_agestd_assemble.py 먼저"; ap["region"]=ap.region.astype(str).str.replace(r"\s+","",regex=True).map(nfc).replace("인천시미추홀구","인천시남구")
+den=ap.groupby(["region","year"])["pop"].sum().reset_index()
+_ar=v2.area_by_region(regs); ar=pd.DataFrame({"region":_ar.index,"area":_ar.values})   # ★2026-10-21 shp 면적
+G=G.merge(den,on=["region","year"],how="left").merge(ar,on="region",how="left")
+_nat=G.groupby("year")["pop"].sum()/1e6; assert _nat.max()<60 and _nat.min()>45, f"Z10 pop 국가합 이상: {_nat.round(1).to_dict()}"
 for c in ("pop","area"):
-    G[c]=G[c].where(G[c]>0)                                   # Z1: 분모의 0은 미측정 (부산진구 2011 인구 0 등 34+44행)
-    G[c]=G.groupby("region")[c].transform(lambda s: s.interpolate(limit_direction="both"))
-    G[c]=G[c].fillna(G[c].median())
+    assert G[c].notna().all() and (G[c]>0).all(), f"분모 {c} 빈칸·0 {int((G[c].isna()|(G[c]<=0)).sum())}칸 — v2는 채우지 않고 멈춤"   # ★2026-10-21
 print(f"분모 복구 후 0/NA: pop {int(((G['pop']<=0)|G['pop'].isna()).sum())} · area {int(((G.area<=0)|G.area.isna()).sum())}")
 print(f"격자 {len(G)}행 · 분모 결측 pop {G['pop'].isna().sum()} area {G.area.isna().sum()}")
 
@@ -72,7 +83,11 @@ for _,r in I.iterrows():
     else:
         d=getfile(f)
         if d is None or col not in d.columns: meta.append(dict(key=key,label=r.label,status="MISSING",note=f"{f}:{col}")); continue
-        s=series(d,col,f)
+        if f.startswith("merged_하수도보급률") and "% of district pop" in str(r.normalization):
+            # ★ 하수도 파일 인구 계열도 2017+ 이중계상 → 같은 행 '총인구(명)'으로 나눈 내부비율(%)로 상쇄, 0=미측정
+            dd=d.assign(_v=pd.to_numeric(d[col].astype(str).str.replace(",",""),errors="coerce")/pd.to_numeric(d["총인구(명)"].astype(str).str.replace(",",""),errors="coerce")*100)
+            dd["_v"]=dd._v.where(dd._v.between(0,100)).where(lambda x:x>0); s=dd.groupby(["region","year"])["_v"].mean().reset_index(); r=r.copy(); r["normalization"]="as-is (% of district pop, within-source ratio)"; r["tier"]="B"   # 2018+만 실질 관측 → 구별 평균(시불변) 처리
+        else: s=series(d,col,f)
     m=G.merge(s,on=["region","year"],how="left")
     n=str(r.normalization); v=m._v.copy()
     if n.startswith("as-is"): pass                                   # 원자료가 이미 비율/밀도 — 재정규화 금지 (Z9)
@@ -86,9 +101,11 @@ for _,r in I.iterrows():
     elif "per capita" in n and "KRW" in n: v=v/m["pop"]
     elif "persons per household" in n: v=m["pop"]/v
     # Tier B 또는 부분 실측 → 실측 연도 구별 평균을 시간불변으로
-    v=v.replace([np.inf,-np.inf],np.nan); m["_n"]=v; obs_years=m.loc[m._n.notna(),"year"].nunique()
+    v=v.replace([np.inf,-np.inf],np.nan); m["_n"]=v
+    m["_n"]=yg.gate(m,key,r.label,col)   # ★v2d 연도 이상 게이트(보간·시간불변 평균 전)
+    obs_years=m.loc[m._n.notna(),"year"].nunique()
     reg_mean=m.groupby("region")._n.mean()
-    tinv=(r.tier=="B") or (obs_years<10)
+    tinv=(r.tier=="B") or (obs_years<10) or (key in yg.ERRATIC)
     m["_final"]=m.region.map(reg_mean) if tinv else m.groupby("region")._n.transform(lambda s: s.interpolate(limit_direction="both"))
     out[key]=m._final.values
     meta.append(dict(key=key,label=r.label,domain=r.domain,direction=r.direction,tier=r.tier,source=f"{f}:{col}",obs_years=obs_years,time_invariant=tinv,
@@ -129,7 +146,11 @@ keep=[k for k in V if k not in set(F.key)]
 out[["region","year","pop","area"]+keep].to_csv(os.path.join(C,"ST_prereg_panel.csv"),index=False,encoding="utf-8-sig")
 M["gate"]=M.key.map(dict(zip(F.key,F.gate))).fillna("PASS"); M["z5_scale_flag"]=M.key.map(z5flag).fillna(""); M["gate_reason"]=M.key.map(dict(zip(F.key,F.reason))).fillna("")
 M.to_csv(os.path.join(C,"ST_prereg_panel_META.csv"),index=False,encoding="utf-8-sig")
+os.makedirs(v2.log_dir(),exist_ok=True); jr.write_log(os.path.join(v2.log_dir(),"JKMS_v2c_rawfix_530.csv")); yg.write(v2.log_dir())   # ★v2c 교정 기록
 print(f"\n저장: ST_prereg_panel.csv ({len(keep)}변수) · ST_prereg_panel_META.csv")
 
 # ── (2026-08-26 추가) 최종 단계: 한우·젖소를 농림어업총조사 시변 밀도로 교체 (548과 동일 규칙; 재조립 시 자동 적용) ──
-# Run 548_patch_panel_census.py after this script to source ruminant farm density from the agricultural census.
+# ★2026-10-21 v2: 545(총조사 밀도를 shp 면적으로 다시 계산) → 548 → 531(kchs_pc1) → 530b(v2 교정)를 같은 FBD_CACHE로 이어 실행
+import subprocess as _sp
+_here=os.path.dirname(os.path.abspath(__file__))
+for _s in ("545_census_livestock.py","548_patch_panel_census.py","531_z6_vif_design.py","530b_v2_prereg_fix.py"): _sp.run(["python3",os.path.join(_here,_s)],check=True,cwd=_here)

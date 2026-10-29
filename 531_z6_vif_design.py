@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # 531 — Z6(조사지표 주성분) + 도메인 내 공선성 정리 → 모형 투입 사양 확정. IRR 없음.
 import pandas as pd, numpy as np, os, json
-C="data_cache"; D=pd.read_csv(os.path.join(C,"ST_prereg_panel.csv")); M=pd.read_csv(os.path.join(C,"ST_prereg_panel_META.csv"))
+C=os.environ.get("FBD_CACHE","data_cache")   # (2026-10-21) 출력 위치 지정. kchs_pc1은 530b가 v2 방식으로 다시 계산해 덮어씀
+D=pd.read_csv(os.path.join(C,"ST_prereg_panel.csv")); M=pd.read_csv(os.path.join(C,"ST_prereg_panel_META.csv"))
 M=M[M.gate=="PASS"]; V=M.key.tolist()
 X=D.groupby("region")[V].mean()   # 구별 평균(공선성·PC 진단용)
 # ── Z6: 조사(KCHS) 계열 — 국민건강결과 출처 중 % 지표 + 손씻기 ──
@@ -16,7 +17,7 @@ print(f"  PC1 {ev[0]*100:.1f}% · PC2 {ev[1]*100:.1f}% · PC3 {ev[2]*100:.1f}%")
 print("  PC1 ↔ 도시인구 {:+.2f} · 고령 {:+.2f} · 재정 {:+.2f} · 인구밀도 {:+.2f}".format(*[pc1.corr(ext[c]) for c in ext.columns]))
 ld=pd.Series(vt[0]*(-1 if pc1.equals(-pd.Series(u[:,0]*s_[0],index=Xs.index)) else 1),index=Xs.columns).sort_values()
 print("  최대 적재:",", ".join(f"{k}({v:+.2f})" for k,v in pd.concat([ld.head(3),ld.tail(3)]).items()))
-verdict="도농 축 확인 → 모형에 kchs_pc1 명시 포함, 조사지표는 개별 행태로 해석 금지" if ev[0]>0.35 else "공통성분 약함"
+verdict="조사지표 종합축 확인 → 모형에 kchs_pc1 명시 포함, 조사지표는 개별 행태로 해석 금지" if ev[0]>0.35 else "공통성분 약함"
 print("  판정:",verdict)
 # PC1을 패널에 추가
 D["kchs_pc1"]=D.region.map(pc1)
@@ -39,7 +40,15 @@ for dom,g in M[M.key.isin(keep)].groupby("domain"):
     design["domains"][dom]={"vars":g.key.tolist(),"direction":dict(zip(g.key,g.direction)),"time_invariant":dict(zip(g.key,g.time_invariant.astype(bool)))}
 design["negative_controls"]=M[(M.key.isin(keep))&(M.direction=="0")].key.tolist()
 design["detection_controls"]=design["domains"].get("D7 detection",{}).get("vars",[])
-json.dump(design,open(os.path.join(C,"PREREG_DESIGN.json"),"w"),ensure_ascii=False,indent=1)
+# ★2026-10-21: PREREG_DESIGN.json은 사전 지정 설계라 WRITE_DESIGN=1일 때만 덮어씀. 아니면 기존 설계(data_cache)와 비교만 하고, 다르면 _v2_logs에 새 계산본을 남김.
+_cur=os.path.join("data_cache","PREREG_DESIGN.json"); _old=json.load(open(_cur)) if os.path.exists(_cur) else None
+if os.environ.get("WRITE_DESIGN")=="1":
+    json.dump(design,open(os.path.join(C,"PREREG_DESIGN.json"),"w"),ensure_ascii=False,indent=1); print("PREREG_DESIGN.json 덮어씀(WRITE_DESIGN=1)")
+else:
+    _new=json.loads(json.dumps(design,ensure_ascii=False)); _diff=[] if _old is None else sorted(k for k in set(_new)|set(_old) if _new.get(k)!=_old.get(k))
+    print("PREREG_DESIGN.json 덮어쓰지 않음(사전 지정 설계 보존) · 새로 계산한 설계와 기존 설계 차이 항목:",_diff or "없음")
+    if _diff:
+        _ld=os.path.join(C,"_v2_logs"); os.makedirs(_ld,exist_ok=True); json.dump(design,open(os.path.join(_ld,"PREREG_DESIGN_recomputed.json"),"w"),ensure_ascii=False,indent=1)
 D.to_csv(os.path.join(C,"ST_prereg_panel.csv"),index=False,encoding="utf-8-sig")
 print("\n도메인별 투입:"); [print(f"  {d:16s} {len(v['vars']):3d}") for d,v in design["domains"].items()]
 print(f"  음성대조 {len(design['negative_controls'])} · 검출통제 {len(design['detection_controls'])}")

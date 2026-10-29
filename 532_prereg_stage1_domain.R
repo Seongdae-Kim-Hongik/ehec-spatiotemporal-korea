@@ -1,15 +1,18 @@
-# 532 — 사전지정 1단계: 도메인별 BYM2 시공간 모형. 각 도메인 변수 + 도농축(kchs_pc1) + 성비(forced).
+# 532 — 사전지정 1단계: 도메인별 BYM2 시공간 모형. 각 도메인 변수 + 조사지표 종합축(kchs_pc1) + 성비(forced).
+#  ★2026-10-21 v2b(이전 판 .bak_pre_v2b): 풀 결측 변수는 15_세트풀_제외변수.csv의 (3) 결정대로 빼고 도메인 모형도 남은 풀 안에서만 구성
 #  목적: 도메인 안에서 어떤 변수가 신호를 갖는지 — 2단계 결합 모형의 대표 선정 근거(사전규칙: credible 또는 |log IRR| 상위 3).
 suppressPackageStartupMessages({library(dplyr);library(sf);library(spdep);library(stringr);library(INLA);library(e1071);library(jsonlite);library(car)})
-set.seed(20260822); inla.setOption(num.threads="1:1")
+set.seed(20260822); inla.setOption(num.threads=Sys.getenv("INLA_THREADS","2:1"))
 BASE<-file.path(Sys.getenv("EHEC_DATA",unset="data"),"FBD_DATA_ZIP")
-ROOT<-Sys.getenv("EHEC_ROOT",unset="."); CACHE<-file.path(ROOT,"data_cache"); RS<-file.path(ROOT,"results_ST")
+ROOT<-Sys.getenv("EHEC_ROOT",unset="."); CACHE<-file.path(ROOT,"data_cache"); RS<-Sys.getenv("EHEC_RS",unset=file.path(ROOT,"results_ST"))
+V2_CACHE<-CACHE;source(file.path(Sys.getenv("EHEC_ROOT", unset="."),"_v2_common.R"))   # ★2026-10-21 v2: E·사례 코드 결합·게이트, 채움 금지, KDCA형 청주 2011-2013 마스킹(CJ_MASK=0이면 끔). 이전 판 .bak_pre_v2
 DES<-fromJSON(file.path(CACHE,"PREREG_DESIGN.json"))
-d0<-read.csv(file.path(CACHE,"ST_prereg_panel.csv"),fileEncoding="UTF-8-BOM"); d0$region<-str_replace_all(d0$region,"\\s+","")
+d0<-read.csv(file.path(CACHE,Sys.getenv("EHEC_PANEL",unset="ST_prereg_panel.csv")),fileEncoding="UTF-8-BOM"); d0$region<-str_replace_all(d0$region,"\\s+","")
 allv<-unique(c(unlist(lapply(DES$domains,function(x)x$vars)),"kchs_pc1","sex_ratio"))
+allv<-v2_pool_check(d0,allv,"532_prereg_stage1_domain.R")   # ★v2: 풀 변수 결측이면 멈춤(V2_POOL_DROP_NA=1이면 빼고 기록)
 skewf<-function(x){x<-x[is.finite(x)];if(length(x)<3||sd(x)==0)return(0);e1071::skewness(x)}
 Z<-d0[,c("region","year")]
-for(v in allv){x<-d0[[v]];x[is.na(x)]<-mean(x,na.rm=TRUE);xv<-if(min(x,na.rm=TRUE)>=0&&skewf(x)>1)log1p(pmax(x,0))else x;z<-scale(xv)[,1];z[!is.finite(z)]<-0;Z[[v]]<-z}
+for(v in allv){x<-d0[[v]];x<-v2_nofill(x,v);xv<-if(min(x,na.rm=TRUE)>=0&&skewf(x)>1)log1p(pmax(x,0))else x;z<-scale(xv)[,1];z[!is.finite(z)]<-0;Z[[v]]<-z}
 # 그래프
 shp<-st_read(file.path(BASE,"final.shp"),quiet=TRUE)%>%mutate(region=str_replace_all(as.character(region),"\\s+",""),region=if_else(region=="인천시미추홀구","인천시남구",region))%>%st_set_crs(5179)
 coords<-suppressWarnings(st_coordinates(st_centroid(st_geometry(shp))));regs<-shp$region
@@ -18,21 +21,21 @@ for(i in which(card(nb)==0))for(j in k3[[i]]){nb[[i]]<-as.integer(unique(c(setdi
 cc<-n.comp.nb(nb);while(cc$nc>1){m<-as.integer(names(which.max(table(cc$comp.id))));mn<-which(cc$comp.id==m);ot<-which(cc$comp.id!=m);D<-as.matrix(dist(coords));D[ot,ot]<-Inf;D[mn,mn]<-Inf;ix<-which(D[ot,mn,drop=FALSE]==min(D[ot,mn]),arr.ind=TRUE)[1,];a<-ot[ix[1]];b<-mn[ix[2]];nb[[a]]<-as.integer(sort(unique(c(setdiff(nb[[a]],0L),b))));nb[[b]]<-as.integer(sort(unique(c(setdiff(nb[[b]],0L),a))));cc<-n.comp.nb(nb)}
 nb<-make.sym.nb(nb);g<-tempfile(fileext=".graph");nb2INLA(g,nb)
 pc<-list(prec=list(prior="pc.prec",param=c(0.5,0.01)),phi=list(prior="pc",param=c(0.5,2/3)));pcp<-list(prec=list(prior="pc.prec",param=c(0.5,0.01)));CF<-list(mean=0,prec=4,mean.intercept=0,prec.intercept=0.001)
-case<-read.csv(file.path(CACHE,"ST_EHEC_agecase.csv"))%>%group_by(region,year)%>%summarise(cases=sum(cases),.groups="drop")
-Est<-read.csv(file.path(CACHE,"ST_Estd_panel.csv"));yy<-2011:2024
+case<-v2_cases_rc("ST_EHEC_agecase.csv")
+Est<-v2_E_rc("ST_Estd_panel.csv")[,c("region","year","E_std")];yy<-2011:2024
 fitmod<-function(cont){
-  dd<-expand.grid(region=regs,year=yy,stringsAsFactors=FALSE)%>%left_join(case,by=c("region","year"))%>%left_join(Est,by=c("region","year"))%>%left_join(Z,by=c("region","year"))
-  dd$cases[is.na(dd$cases)]<-0;dd$E_std[is.na(dd$E_std)|dd$E_std<=0]<-min(dd$E_std[dd$E_std>0],na.rm=TRUE)
+  dd<-expand.grid(region=regs,year=yy,stringsAsFactors=FALSE)%>%left_join(case,by=c("region","year"))%>%left_join(Est,by=c("region","year"))%>%left_join(v2_relabel(Z,"공변량",keep_code=FALSE),by=c("region","year"))
+  dd<-v2_finish(dd,kdca=TRUE)
   dd$area<-match(dd$region,regs);dd$time<-match(dd$year,yy);dd$id<-1:nrow(dd)
   form<-as.formula(paste0("cases~",paste(sprintf("`%s`",cont),collapse="+"),"+f(area,model='bym2',graph=g,scale.model=TRUE,constr=TRUE,hyper=pc)+f(time,model='rw1',scale.model=TRUE,hyper=pcp)+f(id,model='iid',hyper=pcp)"))
-  tryCatch(inla(form,family="nbinomial",data=dd,E=dd$E_std,control.fixed=CF,control.compute=list(dic=TRUE,waic=TRUE),control.inla=list(control.vb=list(emergency=50))),error=function(e){cat("  [실패]",conditionMessage(e),"\n");NULL})}
+  tryCatch(inla(form,family=Sys.getenv("EHEC_FAM",unset="nbinomial"),data=dd,E=dd$E_std,control.fixed=CF,control.compute=list(dic=TRUE,waic=TRUE),control.inla=list(control.vb=list(emergency=50))),error=function(e){cat("  [실패]",conditionMessage(e),"\n");NULL})}
 grab<-function(m,vs,tag,dom){fx<-m$summary.fixed;do.call(rbind,lapply(vs,function(v)if(v%in%rownames(fx)){r<-fx[v,];data.frame(model=tag,domain=dom,term=v,IRR=round(exp(r$mean),3),lo=round(exp(r$`0.025quant`),3),hi=round(exp(r$`0.975quant`),3),cred=(r$`0.025quant`>0|r$`0.975quant`<0),DIC=round(m$dic$dic,1))}else NULL))}
 # VIF 사전정리 함수(도메인 내 >10 반복제거)
 vifprune<-function(vs){keep<-vs;repeat{if(length(keep)<2)break;vd<-Z[,keep];vd$.y<-rnorm(nrow(vd));v<-tryCatch(car::vif(lm(.y~.,data=vd)),error=function(e)NULL);if(is.null(v)||max(v)<10)break;drop<-names(which.max(v));cat("   VIF>10 제거:",drop,sprintf("(%.1f)\n",max(v)));keep<-setdiff(keep,drop)};keep}
 
 R<-list(); cat("═══ 1단계: 도메인별 모형 (+ kchs_pc1 + sex_ratio) ═══\n")
 for(dom in names(DES$domains)){
-  vs<-setdiff(DES$domains[[dom]]$vars,c("sex_ratio","kchs_pc1")); vs<-vifprune(vs)
+  vs<-setdiff(intersect(DES$domains[[dom]]$vars,allv),c("sex_ratio","kchs_pc1")); vs<-vifprune(vs)   # ★2026-10-21 v2b: 풀에서 뺀 변수(15_세트풀_제외변수.csv)는 도메인 모형에 넣지 않음
   cont<-unique(c(vs,"kchs_pc1","sex_ratio")); cat(sprintf("\n[%s] %d변수\n",dom,length(vs)))
   m<-fitmod(cont); if(is.null(m))next
   r<-grab(m,cont,paste0("S1:",dom),dom); R[[dom]]<-r
