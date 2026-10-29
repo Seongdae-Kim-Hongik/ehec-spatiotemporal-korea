@@ -1,22 +1,22 @@
 "cov","label","IRR","lo","hi","P_gt1","cred"
 "beef_cattle_farms","Beef-cattle farm density",1.263,1.081,1.477,0.998,TRUE
-"dairy_farms","Dairy farm density",0.984,0.875,1.107,0.389,FALSE
-"reservoir_pond_land_area","Reservoir and pond area",1.093,0.975,1.226,0.937,FALSE
-"upland_field_dry_field_area","Upland-field area",1.027,0.89,1.186,0.643,FALSE
-"forest_area","Forest area",0.958,0.813,1.127,0.301,FALSE
-"piped_water_supply_coverage","Piped water supply coverage",0.963,0.788,1.179,0.357,FALSE
-"sewerage_coverage","Sewerage coverage",1.219,0.933,1.594,0.927,FALSE
-"septic_tank_population","Septic-tank population",1.073,0.83,1.389,0.704,FALSE
-"drinking_water_groundwater_use","Drinking-water groundwater use",1.018,0.863,1.202,0.585,FALSE
-"fast_food_outlets_per_1000_pop","Fast-food and eating-out outlets",0.953,0.823,1.102,0.257,FALSE
-"childcare_facilities_per_1000_infants","Childcare facilities",0.935,0.844,1.036,0.098,FALSE
-"soap_sanitizer_use","Handwashing with soap",1.463,1.124,1.907,0.998,TRUE
-"fiscal_independence","Fiscal independence",0.792,0.661,0.952,0.006,TRUE
-"net_migration","Net migration",1.081,0.999,1.168,0.974,FALSE
-"older_adults_living_alone","Older adults living alone",0.942,0.69,1.286,0.351,FALSE
-"sex_ratio","Sex ratio",0.988,0.844,1.157,0.438,FALSE
+"dairy_farms","Dairy farm density",0.984,0.875,1.107,0.39,FALSE
+"reservoir_pond_land_area","Reservoir and pond area",1.094,0.976,1.226,0.938,FALSE
+"upland_field_dry_field_area","Upland-field area",1.027,0.89,1.186,0.642,FALSE
+"forest_area","Forest area",0.957,0.813,1.127,0.299,FALSE
+"piped_water_supply_coverage","Piped water supply coverage",0.963,0.787,1.178,0.355,FALSE
+"sewerage_coverage","Sewerage coverage",1.218,0.933,1.592,0.926,FALSE
+"septic_tank_population","Septic-tank population",1.073,0.831,1.389,0.705,FALSE
+"drinking_water_groundwater_use","Drinking-water groundwater use",1.019,0.864,1.203,0.588,FALSE
+"fast_food_outlets_per_1000_pop","Fast-food and eating-out outlets",0.953,0.823,1.102,0.256,FALSE
+"childcare_facilities_per_1000_infants","Childcare facilities",0.935,0.844,1.036,0.099,FALSE
+"soap_sanitizer_use","Handwashing with soap",1.463,1.125,1.907,0.998,TRUE
+"fiscal_independence","Fiscal independence",0.793,0.661,0.952,0.006,TRUE
+"net_migration","Net migration",1.08,0.999,1.168,0.974,FALSE
+"older_adults_living_alone","Older adults living alone",0.944,0.692,1.288,0.356,FALSE
+"sex_ratio","Sex ratio",0.988,0.844,1.156,0.437,FALSE
 "current_smoking","Current smoking",1.073,0.965,1.194,0.903,FALSE
-"influenza_vaccination_coverage","Influenza vaccination coverage",1.008,0.894,1.136,0.553,FALSE
-"kchs_pc1","KCHS survey composite (PC1)",1.072,0.713,1.611,0.631,FALSE
-"physicians_per_1000_pop","Physicians per 1000 population",1.09,0.95,1.252,0.889,FALSE
-"children_0_4","Children aged 0-4 years, % of population",0.935,0.767,1.141,0.254,FALSE
+"influenza_vaccination_coverage","Influenza vaccination coverage",1.008,0.894,1.135,0.549,FALSE
+"kchs_pc1","KCHS survey composite (PC1)",1.07,0.712,1.607,0.628,FALSE
+"physicians_per_1000_pop","Physicians per 1000 population",1.089,0.949,1.251,0.888,FALSE
+"children_0_4","Children aged 0-4 years, % of population",0.936,0.768,1.142,0.257,FALSE

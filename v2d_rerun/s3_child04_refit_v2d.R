@@ -8,7 +8,7 @@ H<-file.path(ROOT,"JKMS_FBD","JKMS_EHEC_v2d_261029");RS<-file.path(H,"_internal"
 source(file.path(ROOT,"_v2_common.R"))
 T2<-read.csv(file.path(ROOT,"results_ST","MASTER_final_table2.csv"));cont<-T2$cov;stopifnot(length(cont)==20);ENG<-setNames(T2$label,T2$cov)
 d0<-read.csv(file.path(CACHE,"ST_prereg_panel.csv"),fileEncoding="UTF-8-BOM");d0$region<-str_replace_all(d0$region,"\\s+","")
-CH<-read.csv(file.path(RS,"ST_children_pct_v2d.csv"),fileEncoding="UTF-8-BOM",colClasses=c(sigungu_cd="character"))
+CH<-read.csv(file.path(CACHE,"ST_children_pct.csv"),fileEncoding="UTF-8-BOM",colClasses=c(sigungu_cd="character"))   # 2026-10-29 저자 결정 4: 공유 정본(401b_children_pct_v2.py, 통합 전 단위 합산)으로 재적합
 d0$sigungu_cd<-v2_code(d0$region);d0<-left_join(d0,CH[,c("sigungu_cd","year","children_0_4")],by=c("sigungu_cd","year"))
 cat(sprintf("패널 %d행, 연도 %s, children 결측 %d\n",nrow(d0),paste(range(d0$year),collapse="-"),sum(is.na(d0$children_0_4))))
 cv<-c(cont,"children_0_4");ENG["children_0_4"]<-"Children aged 0-4 years, % of population"
